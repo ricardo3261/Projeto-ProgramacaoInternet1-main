@@ -1,406 +1,680 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Empório SR Lulu</title>
 
+
     <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+
         :root {
+
             --green: #004d3d;
             --dark-green: #003f32;
+
             --light-green: #d8ffae;
+
             --orange: #ff6817;
             --orange-dark: #ed5b0d;
+
             --text: #14201e;
             --gray: #707775;
+
             --border: #e5e8e6;
+
             --background: #fff;
+
         }
+
 
         html {
             scroll-behavior: smooth;
         }
 
+
         body {
-            font-family: Arial, Helvetica, sans-serif;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
             color: var(--text);
+
             background: #fff;
+
         }
+
 
         button,
         input {
             font-family: inherit;
         }
 
+
         button {
             cursor: pointer;
         }
 
+
         a {
+
             color: inherit;
+
             text-decoration: none;
+
         }
+
 
         img {
+
             max-width: 100%;
+
         }
 
-        /* =========================
+
+        /* =====================================================
            TOP BAR
-        ========================= */
+        ===================================================== */
 
         .top-bar {
+
             min-height: 44px;
+
             background: var(--green);
+
             color: white;
 
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
 
             padding: 0 5.2%;
+
             font-size: 14px;
+
         }
+
 
         .top-left,
         .top-right {
+
             display: flex;
+
             align-items: center;
+
             gap: 30px;
+
         }
+
 
         .top-item {
+
             display: flex;
+
             align-items: center;
+
             gap: 9px;
+
             white-space: nowrap;
+
         }
+
 
         .top-item strong {
+
             color: var(--light-green);
+
         }
+
 
         .icon {
+
             width: 22px;
+
             height: 22px;
+
             display: inline-flex;
+
             align-items: center;
+
             justify-content: center;
+
             flex-shrink: 0;
+
         }
+
 
         .icon svg {
+
             width: 100%;
+
             height: 100%;
+
             stroke: currentColor;
+
             fill: none;
+
             stroke-width: 1.8;
+
             stroke-linecap: round;
+
             stroke-linejoin: round;
+
         }
 
-        /* =========================
+
+        /* =====================================================
            HEADER
-        ========================= */
+        ===================================================== */
 
         header {
+
             min-height: 108px;
+
             padding: 10px 4.2%;
 
             display: flex;
+
             align-items: center;
+
             gap: 35px;
 
             border-bottom: 1px solid var(--border);
+
             background: white;
+
         }
+
 
         .logo {
+
             width: 320px;
+
             display: flex;
+
             align-items: center;
+
             gap: 14px;
+
             flex-shrink: 0;
+
         }
 
+
         .logo-circle {
+
             width: 88px;
+
             height: 88px;
+
             border-radius: 50%;
+
             background: var(--green);
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             overflow: hidden;
+
             border: 4px solid #e7efe9;
+
             flex-shrink: 0;
+
         }
+
 
         .logo-circle img {
+
             width: 100%;
+
             height: 100%;
+
             object-fit: cover;
+
             border-radius: 50%;
+
             display: block;
+
         }
+
 
         .logo-text {
+
             line-height: 1;
+
         }
+
 
         .logo-title {
+
             font-size: 26px;
+
             font-weight: 800;
+
             color: var(--green);
+
             letter-spacing: -1px;
+
         }
+
 
         .logo-subtitle {
+
             margin-top: 8px;
+
             font-size: 11px;
+
             color: #50615c;
+
             font-weight: 500;
+
             line-height: 1.3;
+
         }
 
-        /* =========================
+
+        /* =====================================================
            SEARCH
-        ========================= */
+        ===================================================== */
 
         .search {
+
             flex: 1;
+
             max-width: 655px;
+
             height: 48px;
 
             border: 1px solid #c8cfcc;
+
             border-radius: 9px;
 
             display: flex;
+
             align-items: center;
+
             padding: 4px 5px 4px 16px;
+
         }
+
 
         .search-icon {
+
             width: 21px;
+
             height: 21px;
+
             margin-right: 12px;
+
             color: #1c2926;
+
             flex-shrink: 0;
+
         }
+
 
         .search-icon svg {
+
             width: 100%;
+
             height: 100%;
+
         }
+
 
         .search input {
+
             border: 0;
+
             outline: 0;
+
             flex: 1;
+
             min-width: 0;
+
             height: 100%;
+
             font-size: 14px;
+
             color: #333;
+
         }
+
 
         .search input::placeholder {
+
             color: #7a817f;
+
         }
 
+
         .search button {
+
             height: 40px;
+
             min-width: 112px;
 
             border: 0;
+
             border-radius: 9px;
 
             background: var(--green);
+
             color: white;
 
             font-size: 16px;
+
             font-weight: 700;
+
         }
+
 
         .search button:hover {
+
             background: var(--dark-green);
+
         }
 
-        /* =========================
+
+        /* =====================================================
            HEADER ACTIONS
-        ========================= */
+        ===================================================== */
 
         .header-actions {
+
             display: flex;
+
             align-items: center;
+
             gap: 28px;
+
             margin-left: auto;
+
         }
+
 
         .header-action {
+
             display: flex;
+
             align-items: center;
+
             gap: 9px;
+
             position: relative;
+
             white-space: nowrap;
+
         }
+
 
         .header-action .action-icon {
+
             width: 28px;
+
             height: 28px;
+
             display: flex;
+
             flex-shrink: 0;
+
         }
+
 
         .header-action .action-icon svg {
+
             width: 100%;
+
             height: 100%;
+
         }
+
 
         .header-action-text {
+
             display: flex;
+
             flex-direction: column;
+
             line-height: 1.15;
+
         }
+
 
         .header-action-text strong {
+
             font-size: 14px;
+
             font-weight: 700;
+
         }
+
 
         .header-action-text small {
+
             font-size: 11px;
+
             color: #777;
+
             margin-top: 4px;
+
         }
+
 
         .cart {
+
             position: relative;
+
         }
 
+
         .cart-badge {
+
             position: absolute;
+
             width: 22px;
+
             height: 22px;
+
             border-radius: 50%;
 
             background: var(--orange);
+
             color: white;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             font-size: 11px;
+
             font-weight: 700;
 
             top: -9px;
+
             left: 17px;
+
         }
+
 
         .cart-price {
+
             font-size: 12px;
+
             color: #555;
+
             margin-top: 5px;
+
         }
 
-        /* =========================
+
+        /* =====================================================
            NAVIGATION
-        ========================= */
+        ===================================================== */
 
         .navigation {
+
             min-height: 53px;
+
             display: flex;
+
             align-items: center;
 
             padding: 0 4.3%;
 
             border-bottom: 1px solid #e2e6e4;
+
             background: white;
+
         }
+
 
         .nav-menu {
+
             display: flex;
+
             align-items: center;
+
             gap: 32px;
+
             width: 100%;
+
         }
 
+
         .nav-item {
+
             display: flex;
+
             align-items: center;
+
             gap: 9px;
 
             font-size: 15px;
+
             font-weight: 600;
 
             white-space: nowrap;
+
         }
+
 
         .nav-item:hover {
+
             color: var(--green);
+
         }
+
 
         .nav-item svg {
+
             width: 23px;
+
             height: 23px;
+
             flex-shrink: 0;
+
         }
+
 
         .nav-separator {
+
             height: 28px;
+
             width: 1px;
+
             background: #cbd0ce;
+
             flex-shrink: 0;
+
         }
 
+
         .offers-link {
+
             margin-left: auto;
+
             color: var(--orange);
 
             display: flex;
+
             align-items: center;
+
             gap: 9px;
 
             font-size: 17px;
+
             font-weight: 700;
 
             white-space: nowrap;
+
         }
 
+
         .offer-icon {
+
             width: 27px;
+
             height: 27px;
+
             border-radius: 50%;
+
             background: var(--orange);
+
             color: white;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             font-size: 15px;
+
         }
 
-        /* =========================
+
+        /* =====================================================
            HERO
-        ========================= */
+        ===================================================== */
 
         .hero {
+
             min-height: 325px;
+
             position: relative;
+
             overflow: hidden;
 
             background:
+
                 linear-gradient(
                     90deg,
                     rgba(0, 68, 53, .99) 0%,
@@ -408,322 +682,1052 @@
                     rgba(0, 68, 53, .30) 72%,
                     rgba(0, 0, 0, .05) 100%
                 ),
+
                 url("https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1800&q=85");
 
             background-size: cover;
+
             background-position: center;
+
         }
+
 
         .hero-content {
+
             width: 60%;
+
             padding-left: 5.2%;
+
             padding-top: 28px;
+
             padding-bottom: 30px;
+
             color: white;
+
         }
+
 
         .hero-title {
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(42px, 4.4vw, 68px);
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size:
+                clamp(
+                    42px,
+                    4.4vw,
+                    68px
+                );
+
             line-height: .96;
+
             letter-spacing: -2px;
+
             font-weight: 800;
+
         }
+
 
         .hero-title span {
+
             color: var(--light-green);
+
         }
+
 
         .hero-features {
+
             display: flex;
+
             align-items: center;
+
             margin-top: 27px;
+
             gap: 19px;
+
         }
+
 
         .hero-feature {
+
             display: flex;
+
             align-items: center;
+
             gap: 10px;
+
             font-size: 13px;
+
             line-height: 1.25;
+
             font-weight: 500;
+
         }
+
 
         .hero-feature svg {
+
             width: 30px;
+
             height: 30px;
+
             flex-shrink: 0;
+
         }
+
 
         .feature-divider {
+
             width: 1px;
+
             height: 38px;
+
             background: rgba(255,255,255,.35);
+
             flex-shrink: 0;
+
         }
 
+
         .hero-button {
+
             margin-top: 23px;
 
             height: 53px;
+
             min-width: 296px;
 
             border: 0;
+
             border-radius: 30px;
 
             background: var(--orange);
+
             color: white;
 
             font-size: 20px;
+
             font-weight: 700;
+
         }
+
 
         .hero-button:hover {
+
             background: var(--orange-dark);
+
         }
 
-        /* =========================
-           CATEGORY SECTION
-        ========================= */
+
+        /* =====================================================
+           CATEGORIES
+        ===================================================== */
 
         .categories {
+
             padding: 14px 1.7% 0;
 
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
+
+            grid-template-columns:
+                repeat(6, 1fr);
+
             gap: 14px;
+
         }
 
+
         .category {
+
             height: 157px;
 
             border: 1px solid #e2e6e4;
+
             border-radius: 7px;
+
             overflow: hidden;
 
             background: white;
+
             transition: .2s ease;
+
         }
+
 
         .category:hover {
+
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,.08);
+
+            box-shadow:
+                0 5px 15px rgba(0,0,0,.08);
+
         }
+
 
         .category-image {
+
             height: 112px;
+
             overflow: hidden;
+
         }
+
 
         .category-image img {
+
             width: 100%;
+
             height: 100%;
+
             object-fit: cover;
+
             display: block;
-            transition: transform .25s ease;
+
+            transition:
+                transform .25s ease;
+
         }
 
-        .category:hover .category-image img {
+
+        .category:hover
+        .category-image img {
+
             transform: scale(1.04);
+
         }
+
 
         .category-name {
+
             height: 45px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
 
             padding: 0 16px;
 
             font-size: 14px;
+
             font-weight: 700;
+
             gap: 8px;
+
         }
+
 
         .category-arrow {
+
             font-size: 23px;
+
             font-weight: 400;
+
         }
 
-        /* =========================
-           OFFERS
-        ========================= */
 
-        .offers-section {
-            padding: 22px 1.7% 45px;
+        /* =====================================================
+           SEÇÕES DE PRODUTOS
+        ===================================================== */
+
+        .offers-section,
+        .new-products-section {
+
+            padding:
+                35px
+                1.7%
+                20px;
+
         }
+
+
+        .new-products-section {
+
+            background: #f6f9f7;
+
+            padding-top: 45px;
+
+            padding-bottom: 48px;
+
+            border-top: 1px solid #e7ece9;
+
+            border-bottom: 1px solid #e7ece9;
+
+        }
+
 
         .section-heading {
+
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
-            margin-bottom: 14px;
+
+            margin-bottom: 18px;
+
             gap: 20px;
+
         }
+
 
         .section-title {
-            font-family: Georgia, "Times New Roman", serif;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
             font-size: 37px;
+
             letter-spacing: -1px;
+
             color: #10221e;
+
         }
 
-        .all-offers {
-            color: #174e42;
+
+        .section-description {
+
+            color: var(--gray);
+
             font-size: 14px;
+
+            margin-top: 7px;
+
+        }
+
+
+        .all-offers {
+
+            color: #174e42;
+
+            font-size: 14px;
+
             font-weight: 700;
 
             display: flex;
+
             align-items: center;
+
             gap: 8px;
 
             text-decoration: underline;
+
             text-underline-offset: 4px;
 
             white-space: nowrap;
+
         }
+
 
         .all-offers:hover {
+
             color: var(--orange);
+
         }
 
-        /* =========================
+
+        /* =====================================================
            PRODUCT GRID
-        ========================= */
+        ===================================================== */
 
         .products {
+
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
             gap: 14px;
+
         }
 
+
+        .new-products-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 16px;
+
+        }
+
+
         .product {
+
             min-height: 185px;
 
             border: 1px solid #e1e4e2;
+
             border-radius: 8px;
 
             padding: 9px;
 
             display: grid;
+
             grid-template-columns: 43% 57%;
 
             position: relative;
+
             background: white;
 
             transition: .2s ease;
+
         }
+
 
         .product:hover {
-            box-shadow: 0 5px 18px rgba(0,0,0,.08);
-            transform: translateY(-2px);
+
+            box-shadow:
+                0 5px 18px rgba(0,0,0,.08);
+
+            transform:
+                translateY(-2px);
+
         }
 
-        .discount {
+
+        .new-product {
+
+            min-height: 260px;
+
+            display: block;
+
+            padding: 12px;
+
+        }
+
+
+        .new-product .product-image {
+
+            height: 135px;
+
+            padding: 0;
+
+        }
+
+
+        .new-product .product-image img {
+
+            height: 135px;
+
+            width: 100%;
+
+        }
+
+
+        .new-product .product-info {
+
+            padding:
+                10px
+                3px
+                2px;
+
+        }
+
+
+        .new-product .product-name {
+
+            min-height: 38px;
+
+            font-weight: 700;
+
+        }
+
+
+        .new-badge {
+
             position: absolute;
+
+            left: 10px;
+
+            top: 10px;
+
+            z-index: 3;
+
+            background: var(--green);
+
+            color: white;
+
+            padding: 5px 9px;
+
+            border-radius: 5px;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: .5px;
+
+        }
+
+
+        .discount {
+
+            position: absolute;
+
             left: 8px;
+
             top: 8px;
+
             z-index: 2;
 
             background: #ffbd08;
+
             color: #1f1f1f;
 
             padding: 5px 9px;
+
             border-radius: 5px;
 
             font-size: 11px;
+
             font-weight: 800;
+
         }
 
+
         .product-image {
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             padding-top: 13px;
+
             min-width: 0;
+
         }
+
 
         .product-image img {
+
             width: 100%;
+
             height: 155px;
+
             object-fit: contain;
+
             display: block;
+
         }
+
 
         .product-info {
-            padding: 5px 9px 4px;
+
+            padding:
+                5px
+                9px
+                4px;
+
             display: flex;
+
             flex-direction: column;
+
             min-width: 0;
+
         }
+
 
         .product-name {
+
             font-size: 14px;
+
             line-height: 1.22;
+
             min-height: 51px;
+
             font-weight: 500;
+
         }
+
 
         .rating {
+
             color: #ffbd00;
+
             font-size: 14px;
+
             letter-spacing: 1px;
+
             margin-top: 2px;
+
         }
+
 
         .reviews {
+
             color: #666;
+
             font-size: 11px;
+
             letter-spacing: 0;
+
             margin-left: 3px;
+
         }
+
 
         .old-price {
+
             font-size: 11px;
+
             color: #8b8f8d;
+
             text-decoration: line-through;
+
             margin-top: 2px;
+
         }
+
 
         .price {
+
             font-size: 20px;
+
             font-weight: 800;
+
             line-height: 1.05;
+
             margin-top: 1px;
+
         }
+
 
         .payment {
+
             color: #777;
+
             font-size: 11px;
+
             margin-top: 2px;
+
         }
 
+
         .add-cart {
+
             margin-top: auto;
 
             height: 34px;
 
             background: white;
+
             color: #164e41;
 
             border: 1px solid #4f7c71;
+
             border-radius: 6px;
 
             font-size: 12px;
+
             font-weight: 700;
+
         }
+
 
         .add-cart:hover {
+
             background: #eff7f4;
+
             border-color: var(--green);
+
         }
 
-        /* =========================
+
+        /* =====================================================
+           DEPOIMENTOS
+        ===================================================== */
+
+        .testimonials-section {
+
+            padding:
+                58px
+                4.5%
+                65px;
+
+            background: #f5f8f6;
+
+            border-top: 1px solid var(--border);
+
+        }
+
+
+        .testimonials-header {
+
+            text-align: center;
+
+            max-width: 720px;
+
+            margin:
+                0
+                auto
+                34px;
+
+        }
+
+
+        .testimonials-header
+        .section-title {
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .testimonials-subtitle {
+
+            color: var(--gray);
+
+            font-size: 15px;
+
+            line-height: 1.6;
+
+        }
+
+
+        .testimonials-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+
+        .testimonial-card {
+
+            background: #fff;
+
+            border: 1px solid #e1e7e4;
+
+            border-radius: 12px;
+
+            padding: 25px 23px;
+
+            box-shadow:
+                0 5px 18px rgba(0,0,0,.05);
+
+            transition: .2s ease;
+
+        }
+
+
+        .testimonial-card:hover {
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 9px 24px rgba(0,0,0,.08);
+
+        }
+
+
+        .testimonial-stars {
+
+            color: #ffbd00;
+
+            font-size: 17px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .testimonial-text {
+
+            color: #39433f;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            min-height: 96px;
+
+        }
+
+
+        .testimonial-author {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-top: 20px;
+
+            padding-top: 16px;
+
+            border-top: 1px solid #edf0ee;
+
+        }
+
+
+        .testimonial-avatar {
+
+            width: 42px;
+
+            height: 42px;
+
+            border-radius: 50%;
+
+            background: var(--green);
+
+            color: #fff;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-weight: 800;
+
+            font-size: 14px;
+
+        }
+
+
+        .testimonial-author strong {
+
+            display: block;
+
+            font-size: 14px;
+
+            color: #17332c;
+
+        }
+
+
+        .testimonial-author small {
+
+            display: block;
+
+            margin-top: 3px;
+
+            color: #7a817f;
+
+            font-size: 11px;
+
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .footer {
+
+            background: var(--green);
+
+            color: white;
+
+            padding:
+                52px
+                5%
+                20px;
+
+        }
+
+
+        .footer-container {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1.35fr
+                1fr
+                1fr
+                1.1fr;
+
+            gap: 35px;
+
+        }
+
+
+        .footer-box h3 {
+
+            margin-bottom: 15px;
+
+            font-size: 18px;
+
+            color: var(--light-green);
+
+        }
+
+
+        .footer-box p,
+        .footer-box a {
+
+            color: #e1ebe7;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+        }
+
+
+        .footer-box a {
+
+            display: block;
+
+            margin-bottom: 7px;
+
+            transition: .2s ease;
+
+        }
+
+
+        .footer-box a:hover {
+
+            color: var(--light-green);
+
+            transform:
+                translateX(2px);
+
+        }
+
+
+        .footer-brand {
+
+            font-size: 24px !important;
+
+            font-weight: 800;
+
+            line-height: 1.1 !important;
+
+            color: white !important;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        /* =====================================================
+           SOCIAL
+        ===================================================== */
+
+        .social-footer {
+
+            display: flex;
+
+            gap: 11px;
+
+            margin-top: 17px;
+
+        }
+
+
+        .social-footer a {
+
+            width: 42px;
+
+            height: 42px;
+
+            border: 1px solid
+                rgba(255,255,255,.35);
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: white;
+
+            margin: 0;
+
+            transition: .25s ease;
+
+        }
+
+
+        .social-footer a:hover {
+
+            background: white;
+
+            color: var(--green);
+
+            transform:
+                translateY(-3px);
+
+        }
+
+
+        .social-footer svg {
+
+            width: 21px;
+
+            height: 21px;
+
+            fill: currentColor;
+
+        }
+
+
+        /* =====================================================
+           FOOTER BOTTOM
+        ===================================================== */
+
+        .footer-bottom {
+
+            max-width: 1200px;
+
+            margin:
+                35px
+                auto
+                0;
+
+            padding-top: 18px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,.18);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            color: #c9d8d3;
+
+            font-size: 12px;
+
+        }
+
+
+        /* =====================================================
            TABLET
-        ========================= */
+        ===================================================== */
 
         @media (max-width: 1250px) {
 
@@ -756,237 +1760,531 @@
             }
 
             .products {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
+
+            .new-products-grid {
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+
+            .footer-container {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
         }
 
-        /* =========================
+
+        /* =====================================================
            TABLET / MOBILE
-        ========================= */
+        ===================================================== */
 
         @media (max-width: 900px) {
 
             .top-bar {
+
                 padding: 0 15px;
+
                 font-size: 11px;
+
             }
+
 
             .top-right {
+
                 display: none;
+
             }
+
 
             header {
+
                 min-height: auto;
+
                 padding: 15px;
+
                 flex-wrap: wrap;
+
                 gap: 15px;
+
             }
+
 
             .logo {
+
                 width: auto;
+
             }
+
 
             .logo-circle {
+
                 width: 70px;
+
                 height: 70px;
+
             }
 
-            .logo-circle img {
-                width: 100%;
-                height: 100%;
-            }
 
             .search {
+
                 order: 3;
+
                 flex-basis: 100%;
+
                 max-width: none;
+
             }
+
 
             .header-actions {
+
                 margin-left: auto;
+
             }
+
 
             .navigation {
+
                 overflow-x: auto;
+
                 padding: 0 15px;
+
                 scrollbar-width: thin;
+
             }
+
 
             .nav-menu {
+
                 min-width: max-content;
+
             }
+
 
             .hero {
+
                 min-height: 390px;
+
             }
+
 
             .hero-content {
+
                 width: 90%;
+
                 padding-left: 25px;
+
             }
+
 
             .hero-features {
+
                 flex-wrap: wrap;
+
             }
+
 
             .feature-divider {
+
                 display: none;
+
             }
+
 
             .categories {
-                grid-template-columns: repeat(3, 1fr);
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+
             }
+
+
+            .new-products-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+
+            .testimonials-grid {
+
+                grid-template-columns:
+                    1fr;
+
+                max-width: 650px;
+
+            }
+
+
+            .testimonial-text {
+
+                min-height: auto;
+
+            }
+
         }
 
-        /* =========================
+
+        /* =====================================================
            MOBILE
-        ========================= */
+        ===================================================== */
 
         @media (max-width: 600px) {
 
             .top-bar {
+
                 min-height: 40px;
+
                 justify-content: center;
+
                 text-align: center;
+
             }
+
 
             .top-left {
+
                 width: 100%;
+
                 justify-content: center;
+
             }
+
 
             .logo-subtitle {
+
                 display: none;
+
             }
+
 
             .logo-title {
+
                 font-size: 20px;
+
             }
+
 
             .logo-circle {
+
                 width: 58px;
+
                 height: 58px;
+
             }
 
+
             .header-actions {
+
                 gap: 10px;
+
             }
+
 
             .header-action:nth-child(1),
             .header-action:nth-child(2) {
+
                 display: none;
+
             }
+
 
             .search {
+
                 height: 46px;
+
             }
+
 
             .search button {
+
                 min-width: 85px;
+
                 font-size: 14px;
+
             }
+
 
             .hero {
+
                 min-height: 470px;
-                background-position: 62% center;
+
+                background-position:
+                    62% center;
+
             }
+
 
             .hero-content {
+
                 width: 100%;
-                padding: 35px 22px;
+
+                padding:
+                    35px
+                    22px;
+
             }
+
 
             .hero-title {
+
                 font-size: 44px;
+
             }
+
 
             .hero-features {
+
                 display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 18px 12px;
+
+                grid-template-columns:
+                    1fr 1fr;
+
+                gap:
+                    18px
+                    12px;
+
             }
+
 
             .hero-button {
+
                 width: 100%;
+
                 min-width: 0;
+
             }
+
 
             .categories {
-                grid-template-columns: repeat(2, 1fr);
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
                 padding: 10px;
+
                 gap: 8px;
+
             }
+
 
             .category {
+
                 height: 140px;
+
             }
+
 
             .category-image {
+
                 height: 95px;
+
             }
+
 
             .category-name {
+
                 padding: 0 10px;
+
                 font-size: 12px;
+
             }
+
 
             .section-heading {
+
                 align-items: flex-start;
+
                 flex-direction: column;
+
             }
+
 
             .section-title {
+
                 font-size: 28px;
+
             }
 
-            .offers-section {
-                padding: 20px 10px;
+
+            .offers-section,
+            .new-products-section {
+
+                padding:
+                    28px
+                    10px;
+
             }
+
 
             .products {
+
                 grid-template-columns: 1fr;
+
             }
+
+
+            .new-products-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .new-product {
+
+                min-height: 290px;
+
+            }
+
+
+            .new-product .product-image {
+
+                height: 155px;
+
+            }
+
+
+            .new-product .product-image img {
+
+                height: 155px;
+
+            }
+
 
             .product {
+
                 min-height: 200px;
+
             }
+
+
+            .testimonials-section {
+
+                padding:
+                    45px
+                    15px
+                    50px;
+
+            }
+
+
+            .testimonials-grid {
+
+                gap: 12px;
+
+            }
+
+
+            .testimonial-card {
+
+                padding:
+                    21px
+                    18px;
+
+            }
+
+
+            .footer {
+
+                padding:
+                    42px
+                    22px
+                    18px;
+
+            }
+
+
+            .footer-container {
+
+                grid-template-columns: 1fr;
+
+                gap: 28px;
+
+            }
+
+
+            .footer-bottom {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 8px;
+
+            }
+
         }
 
-        /* =========================
+
+        /* =====================================================
            SMALL MOBILE
-        ========================= */
+        ===================================================== */
 
         @media (max-width: 400px) {
 
             .hero-title {
+
                 font-size: 37px;
+
             }
+
 
             .hero-features {
+
                 grid-template-columns: 1fr;
+
             }
+
 
             .categories {
-                grid-template-columns: 1fr 1fr;
+
+                grid-template-columns:
+                    1fr 1fr;
+
             }
+
 
             .category-name {
-                padding: 0 9px;
+
+                padding:
+                    0
+                    9px;
+
                 font-size: 12px;
+
             }
+
 
             .product {
-                grid-template-columns: 40% 60%;
+
+                grid-template-columns:
+                    40%
+                    60%;
+
             }
+
 
             .product-name {
+
                 font-size: 13px;
+
             }
+
         }
+
     </style>
+
 </head>
 
+
 <body>
+
 
     <!-- =====================================================
          TOP BAR
@@ -997,56 +2295,109 @@
         <div class="top-left">
 
             <div class="top-item">
+
                 <span class="icon">
+
                     <svg viewBox="0 0 24 24">
+
                         <path d="M3 7h11v10H3z"/>
+
                         <path d="M14 10h4l3 3v4h-7z"/>
-                        <circle cx="7" cy="18" r="2"/>
-                        <circle cx="18" cy="18" r="2"/>
+
+                        <circle
+                            cx="7"
+                            cy="18"
+                            r="2"
+                        />
+
+                        <circle
+                            cx="18"
+                            cy="18"
+                            r="2"
+                        />
+
                     </svg>
+
                 </span>
 
                 <span>
-                    <strong>Frete grátis</strong>
-                    para Pernambuco em compras acima de R$ 299,00
+
+                    <strong>
+                        Frete grátis
+                    </strong>
+
+                    para Pernambuco em compras
+                    acima de R$ 299,00
+
                 </span>
+
             </div>
 
         </div>
 
+
         <div class="top-right">
 
             <div class="top-item">
+
                 <span class="icon">
+
                     <svg viewBox="0 0 24 24">
+
                         <path d="M12 3l8 3v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/>
+
                         <path d="M9 12l2 2 4-4"/>
+
                     </svg>
+
                 </span>
 
                 Compra segura
+
             </div>
 
+
             <div class="top-item">
+
                 <span class="icon">
+
                     <svg viewBox="0 0 24 24">
-                        <rect x="3" y="5" width="18" height="14" rx="2"/>
+
+                        <rect
+                            x="3"
+                            y="5"
+                            width="18"
+                            height="14"
+                            rx="2"
+                        />
+
                         <path d="M3 10h18"/>
+
                     </svg>
+
                 </span>
 
                 Parcele em até 12x
+
             </div>
 
+
             <div class="top-item">
+
                 <span class="icon">
+
                     <svg viewBox="0 0 24 24">
+
                         <path d="M21 11.5a8.4 8.4 0 01-9 8.5 9.7 9.7 0 01-4-.9L3 21l1.9-4.7A8.3 8.3 0 013 11.5 8.5 8.5 0 0112 3a8.5 8.5 0 019 8.5z"/>
+
                         <path d="M8 9c.3 2.5 2.5 4.7 5 5"/>
+
                     </svg>
+
                 </span>
 
                 Atendimento via WhatsApp
+
             </div>
 
         </div>
@@ -1060,21 +2411,38 @@
 
     <header>
 
-        <a class="logo" href="#">
+
+        <a
+            class="logo"
+            href="#"
+        >
 
             <div class="logo-circle">
-                <img src="logoLoja.png" alt="Logo Empório SR Lulu">
+
+                <img
+                    src="logoLoja.png"
+                    alt="Logo Empório SR Lulu"
+                >
+
             </div>
+
 
             <div class="logo-text">
 
                 <div class="logo-title">
+
                     EMPÓRIO<br>
+
                     SR LULU
+
                 </div>
 
+
                 <div class="logo-subtitle">
-                    Tudo para sua obra, do básico ao acabamento.
+
+                    Tudo para sua obra,
+                    do básico ao acabamento.
+
                 </div>
 
             </div>
@@ -1086,26 +2454,37 @@
 
             <span class="search-icon">
 
-                <svg viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="2"
-                     stroke-linecap="round">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                >
 
-                    <circle cx="11" cy="11" r="7"/>
+                    <circle
+                        cx="11"
+                        cy="11"
+                        r="7"
+                    />
+
                     <path d="m20 20-4-4"/>
 
                 </svg>
 
             </span>
 
+
             <input
                 type="text"
                 placeholder="O que você procura para a sua obra?"
             >
 
+
             <button type="button">
+
                 Buscar
+
             </button>
 
         </div>
@@ -1113,25 +2492,38 @@
 
         <div class="header-actions">
 
+
             <div class="header-action">
 
                 <span class="action-icon">
 
-                    <svg viewBox="0 0 24 24"
-                         fill="none"
-                         stroke="currentColor"
-                         stroke-width="1.7">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                    >
 
-                        <circle cx="12" cy="8" r="4"/>
-                        <path d="M4 21c.5-4 3.2-6 8-6s7.5 2 8 6"/>
+                        <circle
+                            cx="12"
+                            cy="8"
+                            r="4"
+                        />
+
+                        <path
+                            d="M4 21c.5-4 3.2-6 8-6s7.5 2 8 6"
+                        />
 
                     </svg>
 
                 </span>
 
+
                 <div class="header-action-text">
 
-                    <strong>Minha conta</strong>
+                    <strong>
+                        Minha conta
+                    </strong>
 
                     <small>
                         Entre ou cadastre-se
@@ -1146,19 +2538,28 @@
 
                 <span class="action-icon">
 
-                    <svg viewBox="0 0 24 24"
-                         fill="none"
-                         stroke="currentColor"
-                         stroke-width="1.7">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                    >
 
-                        <path d="M20.8 8.8c0 5.5-8.8 10.2-8.8 10.2S3.2 14.3 3.2 8.8A4.8 4.8 0 018 4c1.7 0 3.2.9 4 2.2A4.8 4.8 0 0116 4a4.8 4.8 0 014.8 4.8z"/>
+                        <path
+                            d="M20.8 8.8c0 5.5-8.8 10.2-8.8 10.2S3.2 14.3 3.2 8.8A4.8 4.8 0 018 4c1.7 0 3.2.9 4 2.2A4.8 4.8 0 0116 4a4.8 4.8 0 014.8 4.8z"
+                        />
 
                     </svg>
 
                 </span>
 
+
                 <div class="header-action-text">
-                    <strong>Favoritos</strong>
+
+                    <strong>
+                        Favoritos
+                    </strong>
+
                 </div>
 
             </div>
@@ -1168,22 +2569,38 @@
 
                 <span class="action-icon">
 
-                    <svg viewBox="0 0 24 24"
-                         fill="none"
-                         stroke="currentColor"
-                         stroke-width="1.7">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                    >
 
-                        <path d="M3 4h2l2.2 11h10.9l2-8H6"/>
-                        <circle cx="9" cy="20" r="1.5"/>
-                        <circle cx="18" cy="20" r="1.5"/>
+                        <path
+                            d="M3 4h2l2.2 11h10.9l2-8H6"
+                        />
+
+                        <circle
+                            cx="9"
+                            cy="20"
+                            r="1.5"
+                        />
+
+                        <circle
+                            cx="18"
+                            cy="20"
+                            r="1.5"
+                        />
 
                     </svg>
 
                 </span>
 
+
                 <span class="cart-badge">
                     0
                 </span>
+
 
                 <div class="header-action-text">
 
@@ -1212,12 +2629,18 @@
 
         <div class="nav-menu">
 
-            <a href="#" class="nav-item">
 
-                <svg viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="2">
+            <a
+                href="#"
+                class="nav-item"
+            >
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
 
                     <path d="M4 6h16M4 12h16M4 18h16"/>
 
@@ -1225,13 +2648,18 @@
 
                 Todos os departamentos
 
-                <svg style="width:15px;height:15px"
-                     viewBox="0 0 24 24">
 
-                    <path d="m6 9 6 6 6-6"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"/>
+                <svg
+                    style="width:15px;height:15px"
+                    viewBox="0 0 24 24"
+                >
+
+                    <path
+                        d="m6 9 6 6 6-6"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    />
 
                 </svg>
 
@@ -1241,15 +2669,22 @@
             <span class="nav-separator"></span>
 
 
-            <a href="#" class="nav-item">
+            <a
+                href="#"
+                class="nav-item"
+            >
 
-                <svg viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="1.7">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                >
 
                     <path d="M12 3 21 8v9l-9 5-9-5V8z"/>
+
                     <path d="M3 8l9 5 9-5"/>
+
                     <path d="M12 13v9"/>
 
                 </svg>
@@ -1259,16 +2694,27 @@
             </a>
 
 
-            <a href="#" class="nav-item">
+            <a
+                href="#"
+                class="nav-item"
+            >
 
-                <svg viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="1.8">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                >
 
                     <path d="m14 6 4 4"/>
-                    <path d="m3 21 5-1 10-10-4-4L4 16z"/>
-                    <path d="m14 3 2-2 5 5-2 2"/>
+
+                    <path
+                        d="m3 21 5-1 10-10-4-4L4 16z"
+                    />
+
+                    <path
+                        d="m14 3 2-2 5 5-2 2"
+                    />
 
                 </svg>
 
@@ -1277,14 +2723,21 @@
             </a>
 
 
-            <a href="#" class="nav-item">
+            <a
+                href="#"
+                class="nav-item"
+            >
 
-                <svg viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="1.8">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                >
 
-                    <path d="M13 2 4 14h7l-1 8 9-13h-7z"/>
+                    <path
+                        d="M13 2 4 14h7l-1 8 9-13h-7z"
+                    />
 
                 </svg>
 
@@ -1293,14 +2746,21 @@
             </a>
 
 
-            <a href="#" class="nav-item">
+            <a
+                href="#"
+                class="nav-item"
+            >
 
-                <svg viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="1.8">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                >
 
-                    <path d="M12 2s7 7.2 7 12a7 7 0 01-14 0c0-4.8 7-12 7-12z"/>
+                    <path
+                        d="M12 2s7 7.2 7 12a7 7 0 01-14 0c0-4.8 7-12 7-12z"
+                    />
 
                 </svg>
 
@@ -1309,17 +2769,45 @@
             </a>
 
 
-            <a href="#" class="nav-item">
+            <a
+                href="#"
+                class="nav-item"
+            >
 
-                <svg viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="1.8">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                >
 
-                    <rect x="4" y="4" width="7" height="7"/>
-                    <rect x="13" y="4" width="7" height="7"/>
-                    <rect x="4" y="13" width="7" height="7"/>
-                    <rect x="13" y="13" width="7" height="7"/>
+                    <rect
+                        x="4"
+                        y="4"
+                        width="7"
+                        height="7"
+                    />
+
+                    <rect
+                        x="13"
+                        y="4"
+                        width="7"
+                        height="7"
+                    />
+
+                    <rect
+                        x="4"
+                        y="13"
+                        width="7"
+                        height="7"
+                    />
+
+                    <rect
+                        x="13"
+                        y="13"
+                        width="7"
+                        height="7"
+                    />
 
                 </svg>
 
@@ -1328,16 +2816,24 @@
             </a>
 
 
-            <a href="#" class="nav-item">
+            <a
+                href="#"
+                class="nav-item"
+            >
 
-                <svg viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="1.8">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                >
 
                     <path d="M4 5h12v5H4z"/>
+
                     <path d="M8 10v9"/>
+
                     <path d="M6 19h4"/>
+
                     <path d="M16 7h4"/>
 
                 </svg>
@@ -1347,7 +2843,10 @@
             </a>
 
 
-            <a href="#" class="offers-link">
+            <a
+                href="#"
+                class="offers-link"
+            >
 
                 <span class="offer-icon">
                     %
@@ -1370,6 +2869,7 @@
 
         <div class="hero-content">
 
+
             <h1 class="hero-title">
 
                 Tudo para a sua obra,<br>
@@ -1383,23 +2883,41 @@
 
             <div class="hero-features">
 
+
                 <div class="hero-feature">
 
-                    <svg viewBox="0 0 24 24"
-                         fill="none"
-                         stroke="currentColor"
-                         stroke-width="1.7">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                    >
 
                         <path d="M3 6h11v11H3z"/>
+
                         <path d="M14 9h4l3 3v5h-7z"/>
-                        <circle cx="7" cy="19" r="2"/>
-                        <circle cx="18" cy="19" r="2"/>
+
+                        <circle
+                            cx="7"
+                            cy="19"
+                            r="2"
+                        />
+
+                        <circle
+                            cx="18"
+                            cy="19"
+                            r="2"
+                        />
 
                     </svg>
 
+
                     <span>
+
                         Grande variedade<br>
+
                         de produtos
+
                     </span>
 
                 </div>
@@ -1410,19 +2928,30 @@
 
                 <div class="hero-feature">
 
-                    <svg viewBox="0 0 24 24"
-                         fill="none"
-                         stroke="currentColor"
-                         stroke-width="1.7">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                    >
 
-                        <path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/>
-                        <path d="m8 12 3 3 5-6"/>
+                        <path
+                            d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"
+                        />
+
+                        <path
+                            d="m8 12 3 3 5-6"
+                        />
 
                     </svg>
 
+
                     <span>
+
                         Preços que<br>
+
                         cabem no seu bolso
+
                     </span>
 
                 </div>
@@ -1433,20 +2962,28 @@
 
                 <div class="hero-feature">
 
-                    <svg viewBox="0 0 24 24"
-                         fill="none"
-                         stroke="currentColor"
-                         stroke-width="1.7">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                    >
 
                         <path d="M3 11 12 3l9 8"/>
+
                         <path d="M5 10v10h14V10"/>
+
                         <path d="M9 20v-6h6v6"/>
 
                     </svg>
 
+
                     <span>
+
                         Do básico<br>
+
                         ao acabamento
+
                     </span>
 
                 </div>
@@ -1457,19 +2994,32 @@
 
                 <div class="hero-feature">
 
-                    <svg viewBox="0 0 24 24"
-                         fill="none"
-                         stroke="currentColor"
-                         stroke-width="1.7">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                    >
 
-                        <circle cx="12" cy="12" r="9"/>
-                        <path d="m12 7 1.4 3.4L17 12l-3.6 1.6L12 17l-1.4-3.4L7 12l3.6-1.6z"/>
+                        <circle
+                            cx="12"
+                            cy="12"
+                            r="9"
+                        />
+
+                        <path
+                            d="m12 7 1.4 3.4L17 12l-3.6 1.6L12 17l-1.4-3.4L7 12l3.6-1.6z"
+                        />
 
                     </svg>
 
+
                     <span>
+
                         Atendimento<br>
+
                         especializado
+
                     </span>
 
                 </div>
@@ -1477,8 +3027,13 @@
             </div>
 
 
-            <button class="hero-button" type="button">
+            <button
+                class="hero-button"
+                type="button"
+            >
+
                 Comprar agora&nbsp; →
+
             </button>
 
         </div>
@@ -1492,103 +3047,176 @@
 
     <section class="categories">
 
-        <a href="#" class="category">
+
+        <a
+            href="#"
+            class="category"
+        >
 
             <div class="category-image">
+
                 <img
                     src="materiaisBasicos.png"
                     alt="Materiais básicos"
-                    loading="lazy">
+                    loading="lazy"
+                >
+
             </div>
 
+
             <div class="category-name">
+
                 Materiais básicos
-                <span class="category-arrow">→</span>
+
+                <span class="category-arrow">
+                    →
+                </span>
+
             </div>
 
         </a>
 
 
-        <a href="#" class="category">
+        <a
+            href="#"
+            class="category"
+        >
 
             <div class="category-image">
+
                 <img
                     src="ferramentas.png"
                     alt="Ferramentas"
-                    loading="lazy">
+                    loading="lazy"
+                >
+
             </div>
 
+
             <div class="category-name">
+
                 Ferramentas
-                <span class="category-arrow">→</span>
+
+                <span class="category-arrow">
+                    →
+                </span>
+
             </div>
 
         </a>
 
 
-        <a href="#" class="category">
+        <a
+            href="#"
+            class="category"
+        >
 
             <div class="category-image">
+
                 <img
                     src="cabos.png"
                     alt="Elétrica"
-                    loading="lazy">
+                    loading="lazy"
+                >
+
             </div>
 
+
             <div class="category-name">
+
                 Elétrica
-                <span class="category-arrow">→</span>
+
+                <span class="category-arrow">
+                    →
+                </span>
+
             </div>
 
         </a>
 
 
-        <a href="#" class="category">
+        <a
+            href="#"
+            class="category"
+        >
 
             <div class="category-image">
+
                 <img
                     src="hidraulica.png"
                     alt="Hidráulica"
-                    loading="lazy">
+                    loading="lazy"
+                >
+
             </div>
 
+
             <div class="category-name">
+
                 Hidráulica
-                <span class="category-arrow">→</span>
+
+                <span class="category-arrow">
+                    →
+                </span>
+
             </div>
 
         </a>
 
 
-        <a href="#" class="category">
+        <a
+            href="#"
+            class="category"
+        >
 
             <div class="category-image">
+
                 <img
                     src="materialPintura.png"
                     alt="Tintas"
-                    loading="lazy">
+                    loading="lazy"
+                >
+
             </div>
 
+
             <div class="category-name">
+
                 Tintas
-                <span class="category-arrow">→</span>
+
+                <span class="category-arrow">
+                    →
+                </span>
+
             </div>
 
         </a>
 
 
-        <a href="#" class="category">
+        <a
+            href="#"
+            class="category"
+        >
 
             <div class="category-image">
+
                 <img
                     src="pisos.png"
                     alt="Pisos e revestimentos"
-                    loading="lazy">
+                    loading="lazy"
+                >
+
             </div>
 
+
             <div class="category-name">
+
                 Pisos e revestimentos
-                <span class="category-arrow">→</span>
+
+                <span class="category-arrow">
+                    →
+                </span>
+
             </div>
 
         </a>
@@ -1597,19 +3225,34 @@
 
 
     <!-- =====================================================
-         OFFERS
+         OFERTAS DA SEMANA
     ===================================================== -->
 
     <section class="offers-section">
 
+
         <div class="section-heading">
 
-            <h2 class="section-title">
-                Ofertas para sua obra
-            </h2>
+            <div>
 
-            <a href="#" class="all-offers">
+                <h2 class="section-title">
+                    Ofertas da Semana
+                </h2>
+
+                <p class="section-description">
+                    Aproveite nossas melhores ofertas.
+                </p>
+
+            </div>
+
+
+            <a
+                href="#"
+                class="all-offers"
+            >
+
                 Ver todas as ofertas →
+
             </a>
 
         </div>
@@ -1617,7 +3260,8 @@
 
         <div class="products">
 
-            <!-- PRODUCT 1 -->
+
+            <!-- PRODUTO 1 -->
 
             <article class="product">
 
@@ -1625,43 +3269,63 @@
                     8% OFF
                 </span>
 
+
                 <div class="product-image">
 
                     <img
                         src="cimentoPoty.png"
-                        alt="Cimento Votoran"
-                        loading="lazy">
+                        alt="Cimento Poty"
+                        loading="lazy"
+                    >
 
                 </div>
+
 
                 <div class="product-info">
 
                     <div class="product-name">
+
                         Cimento Poty Todas
                         as Obras 50kg
+
                     </div>
 
+
                     <div class="rating">
+
                         ★★★★★
+
                         <span class="reviews">
                             (124)
                         </span>
+
                     </div>
+
 
                     <div class="old-price">
                         R$ 52,50
                     </div>
 
+
                     <div class="price">
                         R$ 48,30
                     </div>
+
 
                     <div class="payment">
                         no Pix ou boleto
                     </div>
 
-                    <button class="add-cart" type="button">
-                        🛒 &nbsp; Adicionar ao carrinho
+
+                    <button
+                        class="add-cart"
+                        type="button"
+                    >
+
+                        🛒
+                        &nbsp;
+                        Adicionar ao carrinho
+
                     </button>
 
                 </div>
@@ -1669,7 +3333,7 @@
             </article>
 
 
-            <!-- PRODUCT 2 -->
+            <!-- PRODUTO 2 -->
 
             <article class="product">
 
@@ -1677,43 +3341,63 @@
                     18% OFF
                 </span>
 
+
                 <div class="product-image">
 
                     <img
                         src="furadeira.png"
                         alt="Parafusadeira e Furadeira"
-                        loading="lazy">
+                        loading="lazy"
+                    >
 
                 </div>
+
 
                 <div class="product-info">
 
                     <div class="product-name">
+
                         Parafusadeira e Furadeira
                         Black+Decker 12V
+
                     </div>
 
+
                     <div class="rating">
+
                         ★★★★★
+
                         <span class="reviews">
                             (89)
                         </span>
+
                     </div>
+
 
                     <div class="old-price">
                         R$ 299,90
                     </div>
 
+
                     <div class="price">
                         R$ 245,90
                     </div>
+
 
                     <div class="payment">
                         no Pix ou boleto
                     </div>
 
-                    <button class="add-cart" type="button">
-                        🛒 &nbsp; Adicionar ao carrinho
+
+                    <button
+                        class="add-cart"
+                        type="button"
+                    >
+
+                        🛒
+                        &nbsp;
+                        Adicionar ao carrinho
+
                     </button>
 
                 </div>
@@ -1721,7 +3405,7 @@
             </article>
 
 
-            <!-- PRODUCT 3 -->
+            <!-- PRODUTO 3 -->
 
             <article class="product">
 
@@ -1729,43 +3413,63 @@
                     15% OFF
                 </span>
 
+
                 <div class="product-image">
 
                     <img
                         src="baciaSanitaria.png"
                         alt="Bacia sanitária"
-                        loading="lazy">
+                        loading="lazy"
+                    >
 
                 </div>
+
 
                 <div class="product-info">
 
                     <div class="product-name">
+
                         Bacia Sanitária com Caixa
                         Acoplada Deca
+
                     </div>
 
+
                     <div class="rating">
+
                         ★★★★★
+
                         <span class="reviews">
                             (56)
                         </span>
+
                     </div>
+
 
                     <div class="old-price">
                         R$ 759,90
                     </div>
 
+
                     <div class="price">
                         R$ 645,90
                     </div>
+
 
                     <div class="payment">
                         no Pix ou boleto
                     </div>
 
-                    <button class="add-cart" type="button">
-                        🛒 &nbsp; Adicionar ao carrinho
+
+                    <button
+                        class="add-cart"
+                        type="button"
+                    >
+
+                        🛒
+                        &nbsp;
+                        Adicionar ao carrinho
+
                     </button>
 
                 </div>
@@ -1773,7 +3477,7 @@
             </article>
 
 
-            <!-- PRODUCT 4 -->
+            <!-- PRODUTO 4 -->
 
             <article class="product">
 
@@ -1781,49 +3485,71 @@
                     20% OFF
                 </span>
 
+
                 <div class="product-image">
 
                     <img
                         src="tintaCoral.png"
                         alt="Tinta Coral"
-                        loading="lazy">
+                        loading="lazy"
+                    >
 
                 </div>
+
 
                 <div class="product-info">
 
                     <div class="product-name">
+
                         Tinta Coral Sol e Chuva
                         18L Branco Fosco
+
                     </div>
 
+
                     <div class="rating">
+
                         ★★★★★
+
                         <span class="reviews">
                             (201)
                         </span>
+
                     </div>
+
 
                     <div class="old-price">
                         R$ 419,90
                     </div>
 
+
                     <div class="price">
                         R$ 335,90
                     </div>
+
 
                     <div class="payment">
                         no Pix ou boleto
                     </div>
 
-                    <button class="add-cart" type="button">
-                        🛒 &nbsp; Adicionar ao carrinho
+
+                    <button
+                        class="add-cart"
+                        type="button"
+                    >
+
+                        🛒
+                        &nbsp;
+                        Adicionar ao carrinho
+
                     </button>
 
                 </div>
 
             </article>
-                    <!-- PRODUCT 5 -->
+
+
+            <!-- PRODUTO 5 -->
 
             <article class="product">
 
@@ -1831,50 +3557,68 @@
                     17% OFF
                 </span>
 
+
                 <div class="product-image">
 
                     <img
                         src="dogstradicional.png"
-                        alt="Tinta Coral"
-                        loading="lazy">
+                        alt="Dogs Tradicional"
+                        loading="lazy"
+                    >
 
                 </div>
+
 
                 <div class="product-info">
 
                     <div class="product-name">
                         Dogs Tradicional 15Kg
-
-                        
                     </div>
 
+
                     <div class="rating">
+
                         ★★★★★
+
                         <span class="reviews">
                             (524)
                         </span>
+
                     </div>
+
 
                     <div class="old-price">
                         R$ 126,99
                     </div>
 
+
                     <div class="price">
                         R$ 105,40
                     </div>
+
 
                     <div class="payment">
                         no Pix ou boleto
                     </div>
 
-                    <button class="add-cart" type="button">
-                        🛒 &nbsp; Adicionar ao carrinho
+
+                    <button
+                        class="add-cart"
+                        type="button"
+                    >
+
+                        🛒
+                        &nbsp;
+                        Adicionar ao carrinho
+
                     </button>
 
                 </div>
 
             </article>
-                    <!-- PRODUCT 6 -->
+
+
+            <!-- PRODUTO 6 -->
 
             <article class="product">
 
@@ -1882,49 +3626,68 @@
                     10% OFF
                 </span>
 
+
                 <div class="product-image">
 
                     <img
                         src="bainhaFoice.png"
-                        alt="Tinta Coral"
-                        loading="lazy">
+                        alt="Bainha para Foice"
+                        loading="lazy"
+                    >
 
                 </div>
+
 
                 <div class="product-info">
 
                     <div class="product-name">
                         Bainha Para Foice Em Couro
-                        
                     </div>
 
+
                     <div class="rating">
+
                         ★★★★★
+
                         <span class="reviews">
                             (2398)
                         </span>
+
                     </div>
+
 
                     <div class="old-price">
                         R$ 72,30
                     </div>
 
+
                     <div class="price">
                         R$ 65,07
                     </div>
+
 
                     <div class="payment">
                         no Pix ou boleto
                     </div>
 
-                    <button class="add-cart" type="button">
-                        🛒 &nbsp; Adicionar ao carrinho
+
+                    <button
+                        class="add-cart"
+                        type="button"
+                    >
+
+                        🛒
+                        &nbsp;
+                        Adicionar ao carrinho
+
                     </button>
 
                 </div>
 
             </article>
-                    <!-- PRODUCT 7 -->
+
+
+            <!-- PRODUTO 7 -->
 
             <article class="product">
 
@@ -1932,51 +3695,71 @@
                     12% OFF
                 </span>
 
+
                 <div class="product-image">
 
                     <img
                         src="municao.png"
-                        alt="Tinta Coral"
-                        loading="lazy">
+                        alt="Munição"
+                        loading="lazy"
+                    >
 
                 </div>
+
 
                 <div class="product-info">
 
                     <div class="product-name">
+
                         Munição 38 CBC Ponta Oca
                         Cartela Com 10UN
-                        No Registro
-                        
+
                     </div>
 
+
                     <div class="rating">
+
                         ★★★★★
+
                         <span class="reviews">
                             (241)
                         </span>
+
                     </div>
+
 
                     <div class="old-price">
                         R$ 159,90
                     </div>
 
+
                     <div class="price">
                         R$ 140,71
                     </div>
+
 
                     <div class="payment">
                         no Pix ou boleto
                     </div>
 
-                    <button class="add-cart" type="button">
-                        🛒 &nbsp; Adicionar ao carrinho
+
+                    <button
+                        class="add-cart"
+                        type="button"
+                    >
+
+                        🛒
+                        &nbsp;
+                        Adicionar ao carrinho
+
                     </button>
 
                 </div>
 
             </article>
-                    <!-- PRODUCT 8 -->
+
+
+            <!-- PRODUTO 8 -->
 
             <article class="product">
 
@@ -1984,43 +3767,60 @@
                     15% OFF
                 </span>
 
+
                 <div class="product-image">
 
                     <img
                         src="fogos.png"
-                        alt="Tinta Coral"
-                        loading="lazy">
+                        alt="Fogos"
+                        loading="lazy"
+                    >
 
                 </div>
+
 
                 <div class="product-info">
 
                     <div class="product-name">
-                        fogos Globo 12x1
-    
+                        Fogos Globo 12x1
                     </div>
 
+
                     <div class="rating">
+
                         ★★★★★
+
                         <span class="reviews">
                             (20)
                         </span>
+
                     </div>
+
 
                     <div class="old-price">
                         R$ 42,50
                     </div>
 
+
                     <div class="price">
                         R$ 36,12
                     </div>
+
 
                     <div class="payment">
                         no Pix ou boleto
                     </div>
 
-                    <button class="add-cart" type="button">
-                        🛒 &nbsp; Adicionar ao carrinho
+
+                    <button
+                        class="add-cart"
+                        type="button"
+                    >
+
+                        🛒
+                        &nbsp;
+                        Adicionar ao carrinho
+
                     </button>
 
                 </div>
@@ -2031,6 +3831,885 @@
 
     </section>
 
+
+    <!-- =====================================================
+         NOVIDADES
+    ===================================================== -->
+
+    <section
+        class="new-products-section"
+        id="novidades"
+    >
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <h2 class="section-title">
+                    Novidades
+                </h2>
+
+                <p class="section-description">
+
+                    Confira os produtos que acabaram
+                    de chegar ao Empório SR Lulu.
+
+                </p>
+
+            </div>
+
+
+            <a
+                href="#"
+                class="all-offers"
+            >
+
+                Ver todas as novidades →
+
+            </a>
+
+        </div>
+
+
+        <div class="new-products-grid">
+
+
+            <!-- =================================================
+                 NOVIDADE 1
+            ================================================== -->
+
+            <article class="product new-product">
+
+                <span class="new-badge">
+                    NOVO
+                </span>
+
+
+                <div class="product-image">
+
+                    <img
+                        src="furadeira650.png"
+                        alt="Furadeira de Impacto"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <div class="product-name">
+
+                        Furadeira de Impacto
+                        Profissional 650W
+
+                    </div>
+
+
+                    <div class="rating">
+
+                        ★★★★★
+
+                        <span class="reviews">
+                            (18)
+                        </span>
+
+                    </div>
+
+
+                    <div class="price">
+                        R$ 289,90
+                    </div>
+
+
+                    <div class="payment">
+                        no Pix ou boleto
+                    </div>
+
+
+                    <button
+                        class="add-cart"
+                        type="button"
+                    >
+
+                        🛒
+                        &nbsp;
+                        Adicionar ao carrinho
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 NOVIDADE 2
+            ================================================== -->
+
+            <article class="product new-product">
+
+                <span class="new-badge">
+                    NOVO
+                </span>
+
+
+                <div class="product-image">
+
+                    <img
+                        src="kitFerramentas.png"
+                        alt="Kit de Ferramentas"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <div class="product-name">
+
+                        Kit de Ferramentas
+                        com 100 Peças
+
+                    </div>
+
+
+                    <div class="rating">
+
+                        ★★★★★
+
+                        <span class="reviews">
+                            (32)
+                        </span>
+
+                    </div>
+
+
+                    <div class="price">
+                        R$ 349,90
+                    </div>
+
+
+                    <div class="payment">
+                        no Pix ou boleto
+                    </div>
+
+
+                    <button
+                        class="add-cart"
+                        type="button"
+                    >
+
+                        🛒
+                        &nbsp;
+                        Adicionar ao carrinho
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 NOVIDADE 3
+            ================================================== -->
+
+            <article class="product new-product">
+
+                <span class="new-badge">
+                    NOVO
+                </span>
+
+
+                <div class="product-image">
+
+                    <img
+                        src="torneiraMono.png"
+                        alt="Torneira para Cozinha"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <div class="product-name">
+
+                        Torneira para Cozinha
+                        Monocomando Cromada
+
+                    </div>
+
+
+                    <div class="rating">
+
+                        ★★★★★
+
+                        <span class="reviews">
+                            (14)
+                        </span>
+
+                    </div>
+
+
+                    <div class="price">
+                        R$ 219,90
+                    </div>
+
+
+                    <div class="payment">
+                        no Pix ou boleto
+                    </div>
+
+
+                    <button
+                        class="add-cart"
+                        type="button"
+                    >
+
+                        🛒
+                        &nbsp;
+                        Adicionar ao carrinho
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 NOVIDADE 4
+            ================================================== -->
+
+            <article class="product new-product">
+
+                <span class="new-badge">
+                    NOVO
+                </span>
+
+
+                <div class="product-image">
+
+                    <img
+                        src="lampada.png"
+                        alt="Lâmpada LED"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <div class="product-name">
+
+                        Lâmpada LED Bulbo
+                        50W Luz Branca
+
+                    </div>
+
+
+                    <div class="rating">
+
+                        ★★★★★
+
+                        <span class="reviews">
+                            (27)
+                        </span>
+
+                    </div>
+
+
+                    <div class="price">
+                        R$ 17,90
+                    </div>
+
+
+                    <div class="payment">
+                        no Pix ou boleto
+                    </div>
+
+
+                    <button
+                        class="add-cart"
+                        type="button"
+                    >
+
+                        🛒
+                        &nbsp;
+                        Adicionar ao carrinho
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 NOVIDADE 5
+            ================================================== -->
+
+            <article class="product new-product">
+
+                <span class="new-badge">
+                    NOVO
+                </span>
+
+
+                <div class="product-image">
+
+                    <img
+                        src="massaCorridaSuv.png"
+                        alt="Massa Corrida"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <div class="product-name">
+
+                        Massa Acrilica Suvinil
+                        25Kg
+                        
+
+                    </div>
+
+
+                    <div class="rating">
+
+                        ★★★★★
+
+                        <span class="reviews">
+                            (41)
+                        </span>
+
+                    </div>
+
+
+                    <div class="price">
+                        R$ 217,80
+                    </div>
+
+
+                    <div class="payment">
+                        no Pix ou boleto
+                    </div>
+
+
+                    <button
+                        class="add-cart"
+                        type="button"
+                    >
+
+                        🛒
+                        &nbsp;
+                        Adicionar ao carrinho
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 NOVIDADE 6
+            ================================================== -->
+
+            <article class="product new-product">
+
+                <span class="new-badge">
+                    NOVO
+                </span>
+
+
+                <div class="product-image">
+
+                    <img
+                        src="rejunto.png"
+                        alt="Rejunte para pisos"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <div class="product-name">
+
+                        Rejunte Flexível
+                        para Pisos 5kg
+
+                    </div>
+
+
+                    <div class="rating">
+
+                        ★★★★★
+
+                        <span class="reviews">
+                            (25)
+                        </span>
+
+                    </div>
+
+
+                    <div class="price">
+                        R$ 29,90
+                    </div>
+
+
+                    <div class="payment">
+                        no Pix ou boleto
+                    </div>
+
+
+                    <button
+                        class="add-cart"
+                        type="button"
+                    >
+
+                        🛒
+                        &nbsp;
+                        Adicionar ao carrinho
+
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         DEPOIMENTOS
+    ===================================================== -->
+
+    <section
+        class="testimonials-section"
+        id="depoimentos"
+    >
+
+
+        <div class="testimonials-header">
+
+            <h2 class="section-title">
+
+                O que nossos clientes dizem
+
+            </h2>
+
+
+            <p class="testimonials-subtitle">
+
+                Quem compra no Empório SR Lulu encontra
+                variedade, bons preços e atendimento de confiança.
+
+            </p>
+
+        </div>
+
+
+        <div class="testimonials-grid">
+
+
+            <!-- DEPOIMENTO 1 -->
+
+            <article class="testimonial-card">
+
+                <div class="testimonial-stars">
+                    ★★★★★
+                </div>
+
+
+                <p class="testimonial-text">
+
+                    “Excelente atendimento e muita variedade.
+                    Encontrei tudo o que precisava para minha reforma
+                    em um só lugar e ainda tive ajuda para escolher
+                    os materiais.”
+
+                </p>
+
+
+                <div class="testimonial-author">
+
+                    <div class="testimonial-avatar">
+                        JM
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            João Marcos
+                        </strong>
+
+                        <small>
+                            Cliente Empório SR Lulu
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- DEPOIMENTO 2 -->
+
+            <article class="testimonial-card">
+
+                <div class="testimonial-stars">
+                    ★★★★★
+                </div>
+
+
+                <p class="testimonial-text">
+
+                    “Gostei muito da experiência de compra.
+                    Os produtos chegaram direitinho, os preços são
+                    competitivos e o atendimento foi rápido e atencioso.”
+
+                </p>
+
+
+                <div class="testimonial-author">
+
+                    <div class="testimonial-avatar">
+                        AS
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Ana Silva
+                        </strong>
+
+                        <small>
+                            Cliente Empório SR Lulu
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- DEPOIMENTO 3 -->
+
+            <article class="testimonial-card">
+
+                <div class="testimonial-stars">
+                    ★★★★★
+                </div>
+
+
+                <p class="testimonial-text">
+
+                    “Já comprei ferramentas e materiais para várias obras.
+                    Sempre encontro produtos de qualidade e consigo tirar
+                    minhas dúvidas com a equipe. Recomendo!”
+
+                </p>
+
+
+                <div class="testimonial-author">
+
+                    <div class="testimonial-avatar">
+                        RC
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Rafael Costa
+                        </strong>
+
+                        <small>
+                            Cliente Empório SR Lulu
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer
+        class="footer"
+        id="contato"
+    >
+
+
+        <div class="footer-container">
+
+
+            <!-- COLUNA 1 -->
+
+            <div class="footer-box">
+
+                <p class="footer-brand">
+
+                    EMPÓRIO SR LULU
+
+                </p>
+
+
+                <p>
+
+                    Tudo para sua obra,
+                    do básico ao acabamento.
+
+                    Qualidade, variedade e atendimento
+                    para ajudar você a construir melhor.
+
+                </p>
+
+
+                <!-- REDES SOCIAIS -->
+
+                <div
+                    class="social-footer"
+                    aria-label="Redes sociais"
+                >
+
+
+                    <!-- INSTAGRAM -->
+
+                    <a
+                        href="#"
+                        aria-label="Instagram"
+                        title="Instagram"
+                    >
+
+                        <svg
+                            viewBox="0 0 24 24"
+                        >
+
+                            <rect
+                                x="3"
+                                y="3"
+                                width="18"
+                                height="18"
+                                rx="5"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                            />
+
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="4"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                            />
+
+                            <circle
+                                cx="17.4"
+                                cy="6.7"
+                                r="1"
+                            />
+
+                        </svg>
+
+                    </a>
+
+
+                    <!-- FACEBOOK -->
+
+                    <a
+                        href="#"
+                        aria-label="Facebook"
+                        title="Facebook"
+                    >
+
+                        <svg
+                            viewBox="0 0 24 24"
+                        >
+
+                            <path
+                                d="M14 8h3V4.5c-.6-.1-1.8-.2-3.1-.2-3.1 0-5.2 1.9-5.2 5.4V13H5.5v3.9h3.2V22h4v-5.1h3.4l.5-3.9h-3.9V10c0-1.1.3-2 1.3-2z"
+                            />
+
+                        </svg>
+
+                    </a>
+
+
+                    <!-- WHATSAPP -->
+
+                    <a
+                        href="#"
+                        aria-label="WhatsApp"
+                        title="WhatsApp"
+                    >
+
+                        <svg
+                            viewBox="0 0 24 24"
+                        >
+
+                            <path
+                                d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.2 1.6 6L0 24l6.3-1.7a11.9 11.9 0 0 0 5.7 1.5h.1c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.3-6.2-3.5-8.4zM12.1 21.7c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.7 9.7 0 1 1 8.3 4.6zm5.3-7.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.8-1.6.1-.2.1-.4 0-.6-.1-.2-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.1 1.4 3.3c.2.2 2.4 3.7 5.8 5.2 2.2 1 2.2.7 2.6.7.4 0 1.8-.7 2-1.3.3-.6.3-1.2.2-1.3 0-.2-.2-.2-.5-.4z"
+                            />
+
+                        </svg>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- COLUNA 2 -->
+
+            <div class="footer-box">
+
+                <h3>
+                    Institucional
+                </h3>
+
+
+                <a href="#">
+                    Sobre nós
+                </a>
+
+
+                <a href="#">
+                    Nossas lojas
+                </a>
+
+
+                <a href="#">
+                    Trabalhe conosco
+                </a>
+
+
+                <a href="#">
+                    Política de privacidade
+                </a>
+
+            </div>
+
+
+            <!-- COLUNA 3 -->
+
+            <div class="footer-box">
+
+                <h3>
+                    Atendimento
+                </h3>
+
+
+                <p>
+                    Segunda a sexta:
+                    8h às 18h
+                </p>
+
+
+                <p>
+                    Sábado:
+                    8h às 13h
+                </p>
+
+
+                <p>
+                    Atendimento via WhatsApp
+                </p>
+
+            </div>
+
+
+            <!-- COLUNA 4 -->
+
+            <div class="footer-box">
+
+                <h3>
+                    Fale conosco
+                </h3>
+
+
+                <p>
+
+                    Encontre tudo para sua obra
+                    com a gente.
+
+                </p>
+
+
+                <a href="#contato">
+
+                    📱 WhatsApp
+
+                </a>
+
+
+                <a
+                    href="mailto:contato@emporiosrlulu.com"
+                >
+
+                    ✉️ E-mail
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             FOOTER BOTTOM
+        ================================================== -->
+
+        <div class="footer-bottom">
+
+            <span>
+
+                © 2026 Empório SR Lulu.
+                Todos os direitos reservados.
+
+            </span>
+
+
+            <span>
+
+                Qualidade para sua obra.
+
+            </span>
+
+        </div>
+
+    </footer>
+
+
 </body>
+
 </html>
-```
