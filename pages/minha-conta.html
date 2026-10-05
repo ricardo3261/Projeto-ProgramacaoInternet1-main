@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha conta | Empório SR Lulu</title>
+    <link rel="stylesheet" href="../style/style.css">
+  </head>
+
+  <body>
+    <div class="top-bar">
+      <div class="top-left"><div class="top-item"><strong>Frete grátis</strong> para Pernambuco em compras acima de R$ 299,00</div></div>
+      <div class="top-right"><div class="top-item">✓ Compra segura</div><div class="top-item">▭ Parcele em até 12x</div><div class="top-item">◉ Atendimento via WhatsApp</div></div>
+    </div>
+
+    <header>
+      <a class="logo" href="../emporio-sr-lulu-organizado.html" aria-label="Página inicial do Empório SR Lulu">
+        <span class="logo-circle"><img src="../assets/logoLoja.png" alt="Logo Empório SR Lulu"></span>
+        <span class="logo-text"><span class="logo-title">EMPÓRIO<br>SR LULU</span><span class="logo-subtitle">Tudo para sua obra, do básico ao acabamento.</span></span>
+      </a>
+      <form class="search" action="#" role="search">
+        <label class="search-icon" for="search-conta">⌕</label>
+        <input id="search-conta" type="search" placeholder="O que você precisa para sua obra?">
+        <button type="submit">Buscar</button>
+      </form>
+      <div class="header-actions">
+        <a class="header-action" href="minha-conta.html" aria-current="page"><span class="action-icon">♙</span><span class="header-action-text"><strong>Minha conta</strong><small>Entre ou cadastre-se</small></span></a>
+        <a class="header-action" href="favoritos.html"><span class="action-icon">♡</span><span class="header-action-text"><strong>Favoritos</strong></span></a>
+        <a class="header-action cart" href="carrinho.html"><span class="action-icon">🛒</span><span class="cart-badge">3</span><span class="header-action-text"><strong>Meu carrinho</strong><small>R$ 510,70</small></span></a>
+      </div>
+    </header>
+
+    <nav class="navigation" aria-label="Departamentos">
+      <div class="nav-menu">
+        <a href="../emporio-sr-lulu-organizado.html" class="nav-item">☰ Todos os departamentos</a><span class="nav-separator" aria-hidden="true"></span>
+        <a href="../emporio-sr-lulu-organizado.html#categorias" class="nav-item">▦ Materiais básicos</a>
+        <a href="../emporio-sr-lulu-organizado.html#categorias" class="nav-item">⌕ Ferramentas</a>
+        <a href="eletrica.html" class="nav-item">ϟ Elétrica</a>
+        <a href="../emporio-sr-lulu-organizado.html#categorias" class="nav-item">◉ Hidráulica</a>
+        <a href="../emporio-sr-lulu-organizado.html#categorias" class="nav-item">▣ Pisos e revestimentos</a>
+        <a href="../emporio-sr-lulu-organizado.html#categorias" class="nav-item">▱ Tintas</a>
+        <a href="ofertas.html" class="offers-link"><span class="offer-icon">%</span> Ofertas</a>
+      </div>
+    </nav>
+
+    <main class="page-main">
+      <p class="breadcrumbs"><a href="../emporio-sr-lulu-organizado.html">Início</a> / Minha conta</p>
+      <h1 class="page-title">Minha conta</h1>
+      <p class="page-subtitle">Entre ou crie sua conta para acompanhar cada etapa da sua compra.</p>
+
+      <div class="account-layout">
+        <section class="account-panel" aria-labelledby="entrar-title">
+          <h2 id="entrar-title">Já sou cliente</h2>
+          <p>Que bom ter você de volta! Acesse sua conta.</p>
+
+          <form action="#">
+            <div class="form-grid">
+              <div class="field is-full">
+                <label for="login-email">E-mail</label>
+                <input id="login-email" type="email" autocomplete="email" placeholder="Digite seu e-mail">
+              </div>
+              <div class="field is-full">
+                <label for="login-password">Senha</label>
+                <input id="login-password" type="password" autocomplete="current-password" placeholder="Digite sua senha">
+              </div>
+            </div>
+            <div class="form-row">
+              <label class="check-label"><input type="checkbox"> Lembrar de mim</label>
+              <a class="text-link" href="#">Esqueci minha senha</a>
+            </div>
+            <button class="button-primary" type="submit">Entrar na minha conta</button>
+          </form>
+
+          <p class="account-help">Precisa de ajuda para acessar? Fale com nosso atendimento pelo WhatsApp.</p>
+          <div class="notice account-security">✓ Seus dados estão seguros com o Empório Sr Lulu.</div>
+        </section>
+
+        <section class="account-panel" aria-labelledby="cadastro-title">
+          <h2 id="cadastro-title">Sou novo por aqui</h2>
+          <p>Cadastre-se e facilite as compras da sua obra.</p>
+
+          <form action="#">
+            <div class="form-grid">
+              <div class="field is-full">
+                <label for="register-name">Nome completo</label>
+                <input id="register-name" type="text" autocomplete="name" placeholder="Como podemos chamar você?">
+              </div>
+              <div class="field is-full">
+                <label for="register-email">E-mail</label>
+                <input id="register-email" type="email" autocomplete="email" placeholder="seuemail@exemplo.com">
+              </div>
+              <div class="field">
+                <label for="register-cpf">CPF</label>
+                <input id="register-cpf" type="text" inputmode="numeric" placeholder="000.000.000-00">
+              </div>
+              <div class="field">
+                <label for="register-phone">Celular</label>
+                <input id="register-phone" type="tel" autocomplete="tel" placeholder="(00) 00000-0000">
+              </div>
+              <div class="field">
+                <label for="register-password">Criar senha</label>
+                <input id="register-password" type="password" autocomplete="new-password" placeholder="Mínimo de 8 caracteres">
+              </div>
+              <div class="field">
+                <label for="register-password-confirm">Confirmar senha</label>
+                <input id="register-password-confirm" type="password" autocomplete="new-password" placeholder="Repita sua senha">
+              </div>
+            </div>
+            <div class="form-row" style="margin: 24px 0 18px">
+              <label class="check-label"><input type="checkbox"> Quero receber ofertas e novidades por e-mail</label>
+            </div>
+            <div class="form-row" style="margin: 0 0 26px">
+              <label class="check-label"><input type="checkbox" required> Li e aceito os termos e a política de privacidade</label>
+            </div>
+            <button class="button-primary" type="submit">Criar minha conta</button>
+          </form>
+        </section>
+      </div>
+
+      <section class="account-benefits" aria-label="Benefícios de ter uma conta">
+        <div class="account-benefit">
+          <span aria-hidden="true">▣</span>
+          <div><h3>Acompanhe seus pedidos</h3><p>Veja o status da entrega em um só lugar.</p></div>
+        </div>
+        <div class="account-benefit">
+          <span aria-hidden="true">♡</span>
+          <div><h3>Salve seus favoritos</h3><p>Guarde os produtos para a próxima compra.</p></div>
+        </div>
+        <div class="account-benefit">
+          <span aria-hidden="true">⌖</span>
+          <div><h3>Compre com mais facilidade</h3><p>Use seus endereços e dados salvos.</p></div>
+        </div>
+      </section>
+    </main>
+
+    <section class="support-cta" id="contato">
+      <div><h2>Precisando de uma mão na sua obra?</h2><p>Nossa equipe ajuda você a escolher o produto certo.</p></div>
+      <a class="button-primary" href="https://wa.me/558133332020">Fale pelo WhatsApp</a>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-box"><p class="footer-brand">EMPÓRIO SR LULU</p><p>Da fundação ao acabamento, tudo para construir e transformar seu espaço.</p><p>Recife, Pernambuco • Desde 1998</p></div>
+        <div class="footer-box"><h3>Institucional</h3><a href="../emporio-sr-lulu-organizado.html">Sobre o Empório Sr Lulu</a><a href="../emporio-sr-lulu-organizado.html">Nossas lojas</a><a href="../emporio-sr-lulu-organizado.html">Trabalhe conosco</a></div>
+        <div class="footer-box"><h3>Atendimento</h3><p>(81) 3333-2020</p><a href="mailto:contato@emporiosrlulu.com.br">contato@emporiosrlulu.com.br</a><p>Seg. a sex. 8h às 18h</p></div>
+        <div class="footer-box"><h3>Sua compra</h3><a href="minha-conta.html">Minha conta</a><a href="favoritos.html">Favoritos</a><a href="carrinho.html">Entrega e retirada</a></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 Empório Sr Lulu. Todos os direitos reservados.</span><span>VISA &nbsp; Mastercard &nbsp; ELO &nbsp; PIX &nbsp; Boleto</span><span>Compra 100% segura • Seus dados protegidos</span></div>
+    </footer>
+  </body>
+</html>

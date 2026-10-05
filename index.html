@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empório SR Lulu</title>
+    <link rel="stylesheet" href="style/style.css">
+  </head>
+
+  <body>
+    <!-- Barra de benefícios -->
+    <div class="top-bar">
+      <div class="top-left">
+        <div class="top-item">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 7h11v10H3z"/>
+              <path d="M14 10h4l3 3v4h-7z"/>
+              <circle cx="7" cy="18" r="2"/>
+              <circle cx="18" cy="18" r="2"/>
+            </svg>
+          </span>
+          <span><strong>Frete grátis</strong> para Pernambuco em compras acima de R$ 299,00</span>
+        </div>
+      </div>
+
+      <div class="top-right">
+        <div class="top-item">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3l8 3v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </span>
+          Compra segura
+        </div>
+
+        <div class="top-item">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2"/>
+              <path d="M3 10h18"/>
+            </svg>
+          </span>
+          Parcele em até 12x
+        </div>
+
+        <div class="top-item">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 11.5a8.4 8.4 0 01-9 8.5 9.7 9.7 0 01-4-.9L3 21l1.9-4.7A8.3 8.3 0 013 11.5 8.5 8.5 0 0112 3a8.5 8.5 0 019 8.5z"/>
+              <path d="M8 9c.3 2.5 2.5 4.7 5 5"/>
+            </svg>
+          </span>
+          Atendimento via WhatsApp
+        </div>
+      </div>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header>
+      <a class="logo" href="#" aria-label="Página inicial do Empório SR Lulu">
+        <div class="logo-circle">
+          <img src="assets/logoLoja.png" alt="Logo Empório SR Lulu">
+        </div>
+
+        <div class="logo-text">
+          <div class="logo-title">EMPÓRIO<br>SR LULU</div>
+          <div class="logo-subtitle">Tudo para sua obra, do básico ao acabamento.</div>
+        </div>
+      </a>
+
+      <form class="search" action="#" role="search">
+        <label class="search-icon" for="site-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"/>
+            <path d="m20 20-4-4"/>
+          </svg>
+        </label>
+        <input id="site-search" type="search" placeholder="O que você procura para a sua obra?">
+        <button type="submit">Buscar</button>
+      </form>
+
+      <div class="header-actions">
+        <a class="header-action" href="pages/minha-conta.html">
+          <span class="action-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M4 21c.5-4 3.2-6 8-6s7.5 2 8 6"/>
+            </svg>
+          </span>
+          <span class="header-action-text">
+            <strong>Minha conta</strong>
+            <small>Entre ou cadastre-se</small>
+          </span>
+        </a>
+
+        <a class="header-action" href="pages/favoritos.html">
+          <span class="action-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <path d="M20.8 8.8c0 5.5-8.8 10.2-8.8 10.2S3.2 14.3 3.2 8.8A4.8 4.8 0 018 4c1.7 0 3.2.9 4 2.2A4.8 4.8 0 0116 4a4.8 4.8 0 014.8 4.8z"/>
+            </svg>
+          </span>
+          <span class="header-action-text"><strong>Favoritos</strong></span>
+        </a>
+
+        <a class="header-action cart" href="pages/carrinho.html">
+          <span class="action-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <path d="M3 4h2l2.2 11h10.9l2-8H6"/>
+              <circle cx="9" cy="20" r="1.5"/>
+              <circle cx="18" cy="20" r="1.5"/>
+            </svg>
+          </span>
+          <span class="cart-badge">0</span>
+          <span class="header-action-text">
+            <strong>Carrinho</strong>
+            <span class="cart-price">R$ 0,00</span>
+          </span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Navegação -->
+    <nav class="navigation" aria-label="Categorias de produtos">
+      <div class="nav-menu">
+        <a href="#categorias" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          Todos os departamentos
+          <svg class="nav-arrow" style="width: 15px; height: 15px" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </a>
+
+        <span class="nav-separator" aria-hidden="true"></span>
+
+        <a href="#categorias" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+            <path d="M12 3 21 8v9l-9 5-9-5V8z"/>
+            <path d="M3 8l9 5 9-5"/>
+            <path d="M12 13v9"/>
+          </svg>
+          Materiais básicos
+        </a>
+
+        <a href="pages/eletrica.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="m14 6 4 4"/>
+            <path d="m3 21 5-1 10-10-4-4L4 16z"/>
+            <path d="m14 3 2-2 5 5-2 2"/>
+          </svg>
+          Ferramentas
+        </a>
+
+        <a href="#categorias" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="M13 2 4 14h7l-1 8 9-13h-7z"/>
+          </svg>
+          Elétrica
+        </a>
+
+        <a href="#categorias" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="M12 2s7 7.2 7 12a7 7 0 01-14 0c0-4.8 7-12 7-12z"/>
+          </svg>
+          Hidráulica
+        </a>
+
+        <a href="#categorias" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <rect x="4" y="4" width="7" height="7"/>
+            <rect x="13" y="4" width="7" height="7"/>
+            <rect x="4" y="13" width="7" height="7"/>
+            <rect x="13" y="13" width="7" height="7"/>
+          </svg>
+          Pisos e revestimentos
+        </a>
+
+        <a href="#" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="M4 5h12v5H4z"/>
+            <path d="M8 10v9"/>
+            <path d="M6 19h4"/>
+            <path d="M16 7h4"/>
+          </svg>
+          Tintas
+        </a>
+
+        <a href="pages/ofertas.html" class="offers-link">
+          <span class="offer-icon">%</span>
+          Ofertas
+        </a>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Destaque -->
+      <section class="hero">
+        <div class="hero-content">
+          <h1 class="hero-title">Tudo para a sua obra,<br><span>em um só lugar.</span></h1>
+
+          <div class="hero-features">
+            <div class="hero-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                <path d="M3 6h11v11H3z"/>
+                <path d="M14 9h4l3 3v5h-7z"/>
+                <circle cx="7" cy="19" r="2"/>
+                <circle cx="18" cy="19" r="2"/>
+              </svg>
+              <span>Grande variedade<br>de produtos</span>
+            </div>
+
+            <span class="feature-divider" aria-hidden="true"></span>
+
+            <div class="hero-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                <path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/>
+                <path d="m8 12 3 3 5-6"/>
+              </svg>
+              <span>Preços que<br>cabem no seu bolso</span>
+            </div>
+
+            <span class="feature-divider" aria-hidden="true"></span>
+
+            <div class="hero-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                <path d="M3 11 12 3l9 8"/>
+                <path d="M5 10v10h14V10"/>
+                <path d="M9 20v-6h6v6"/>
+              </svg>
+              <span>Do básico<br>ao acabamento</span>
+            </div>
+
+            <span class="feature-divider" aria-hidden="true"></span>
+
+            <div class="hero-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="m12 7 1.4 3.4L17 12l-3.6 1.6L12 17l-1.4-3.4L7 12l3.6-1.6z"/>
+              </svg>
+              <span>Atendimento<br>especializado</span>
+            </div>
+          </div>
+
+          <a class="hero-button" href="#ofertas">Comprar agora&nbsp; →</a>
+        </div>
+      </section>
+
+      <!-- Categorias -->
+      <section class="categories" id="categorias" aria-label="Categorias principais">
+        <a href="#ofertas" class="category">
+          <div class="category-image">
+            <img src="assets/materiaisBasicos.png" alt="Materiais básicos" loading="lazy">
+          </div>
+          <div class="category-name">Materiais básicos <span class="category-arrow">→</span></div>
+        </a>
+
+        <a href="#ofertas" class="category">
+          <div class="category-image">
+            <img src="assets/ferramentas.png" alt="Ferramentas" loading="lazy">
+          </div>
+          <div class="category-name">Ferramentas <span class="category-arrow">→</span></div>
+        </a>
+
+        <a href="pages/eletrica.html" class="category">
+          <div class="category-image">
+            <img src="assets/cabos.png" alt="Elétrica" loading="lazy">
+          </div>
+          <div class="category-name">Elétrica <span class="category-arrow">→</span></div>
+        </a>
+
+        <a href="#ofertas" class="category">
+          <div class="category-image">
+            <img src="assets/hidraulica.png" alt="Hidráulica" loading="lazy">
+          </div>
+          <div class="category-name">Hidráulica <span class="category-arrow">→</span></div>
+        </a>
+
+        <a href="#ofertas" class="category">
+          <div class="category-image">
+            <img src="assets/materialPintura.png" alt="Tintas" loading="lazy">
+          </div>
+          <div class="category-name">Tintas <span class="category-arrow">→</span></div>
+        </a>
+
+        <a href="#ofertas" class="category">
+          <div class="category-image">
+            <img src="assets/pisos.png" alt="Pisos e revestimentos" loading="lazy">
+          </div>
+          <div class="category-name">Pisos e revestimentos <span class="category-arrow">→</span></div>
+        </a>
+      </section>
+
+      <!-- Ofertas -->
+      <section class="offers-section" id="ofertas">
+        <div class="section-heading">
+          <div>
+            <h2 class="section-title">Ofertas da Semana</h2>
+            <p class="section-description">Aproveite nossas melhores ofertas.</p>
+          </div>
+          <a href="pages/ofertas.html" class="all-offers">Ver todas as ofertas →</a>
+        </div>
+
+        <div class="products">
+          <article class="product">
+            <span class="discount">8% OFF</span>
+            <div class="product-image">
+              <img src="assets/cimentoPoty.png" alt="Cimento Poty" loading="lazy">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Cimento Poty Todas as Obras 50kg</div>
+              <div class="rating">★★★★★ <span class="reviews">(124)</span></div>
+              <div class="old-price">R$ 52,50</div>
+              <div class="price">R$ 48,30</div>
+              <div class="payment">no Pix ou boleto</div>
+              <button class="add-cart" type="button">🛒&nbsp; Adicionar ao carrinho</button>
+            </div>
+          </article>
+
+          <article class="product">
+            <span class="discount">18% OFF</span>
+            <div class="product-image">
+              <img src="assets/furadeira.png" alt="Parafusadeira e Furadeira" loading="lazy">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Parafusadeira e Furadeira Black+Decker 12V</div>
+              <div class="rating">★★★★★ <span class="reviews">(89)</span></div>
+              <div class="old-price">R$ 299,90</div>
+              <div class="price">R$ 245,90</div>
+              <div class="payment">no Pix ou boleto</div>
+              <button class="add-cart" type="button">🛒&nbsp; Adicionar ao carrinho</button>
+            </div>
+          </article>
+
+          <article class="product">
+            <span class="discount">15% OFF</span>
+            <div class="product-image">
+              <img src="assets/baciaSanitaria.png" alt="Bacia sanitária" loading="lazy">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Bacia Sanitária com Caixa Acoplada Deca</div>
+              <div class="rating">★★★★★ <span class="reviews">(56)</span></div>
+              <div class="old-price">R$ 759,90</div>
+              <div class="price">R$ 645,90</div>
+              <div class="payment">no Pix ou boleto</div>
+              <button class="add-cart" type="button">🛒&nbsp; Adicionar ao carrinho</button>
+            </div>
+          </article>
+
+          <article class="product">
+            <span class="discount">20% OFF</span>
+            <div class="product-image">
+              <img src="assets/tintaCoral.png" alt="Tinta Coral" loading="lazy">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Tinta Coral Sol e Chuva 18L Branco Fosco</div>
+              <div class="rating">★★★★★ <span class="reviews">(201)</span></div>
+              <div class="old-price">R$ 419,90</div>
+              <div class="price">R$ 335,90</div>
+              <div class="payment">no Pix ou boleto</div>
+              <button class="add-cart" type="button">🛒&nbsp; Adicionar ao carrinho</button>
+            </div>
+          </article>
+
+          <article class="product">
+            <span class="discount">17% OFF</span>
+            <div class="product-image">
+              <img src="assets/dogstradicional.png" alt="Dogs Tradicional" loading="lazy">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Dogs Tradicional 15Kg</div>
+              <div class="rating">★★★★★ <span class="reviews">(524)</span></div>
+              <div class="old-price">R$ 126,99</div>
+              <div class="price">R$ 105,40</div>
+              <div class="payment">no Pix ou boleto</div>
+              <button class="add-cart" type="button">🛒&nbsp; Adicionar ao carrinho</button>
+            </div>
+          </article>
+
+          <article class="product">
+            <span class="discount">10% OFF</span>
+            <div class="product-image">
+              <img src="assets/bainhaFoice.png" alt="Bainha para Foice" loading="lazy">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Bainha Para Foice Em Couro</div>
+              <div class="rating">★★★★★ <span class="reviews">(2398)</span></div>
+              <div class="old-price">R$ 72,30</div>
+              <div class="price">R$ 65,07</div>
+              <div class="payment">no Pix ou boleto</div>
+              <button class="add-cart" type="button">🛒&nbsp; Adicionar ao carrinho</button>
+            </div>
+          </article>
+
+          <article class="product">
+            <span class="discount">12% OFF</span>
+            <div class="product-image">
+              <img src="assets/municao.png" alt="Munição" loading="lazy">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Munição 38 CBC Ponta Oca Cartela Com 10UN</div>
+              <div class="rating">★★★★★ <span class="reviews">(241)</span></div>
+              <div class="old-price">R$ 159,90</div>
+              <div class="price">R$ 140,71</div>
+              <div class="payment">no Pix ou boleto</div>
+              <button class="add-cart" type="button">🛒&nbsp; Adicionar ao carrinho</button>
+            </div>
+          </article>
+
+          <article class="product">
+            <span class="discount">15% OFF</span>
+            <div class="product-image">
+              <img src="assets/fogos.png" alt="Fogos" loading="lazy">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Fogos Globo 12x1</div>
+              <div class="rating">★★★★★ <span class="reviews">(20)</span></div>
+              <div class="old-price">R$ 42,50</div>
+              <div class="price">R$ 36,12</div>
+              <div class="payment">no Pix ou boleto</div>
+              <button class="add-cart" type="button">🛒&nbsp; Adicionar ao carrinho</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Novidades -->
+      <section class="new-products-section" id="novidades">
+        <div class="section-heading">
+          <div>
+            <h2 class="section-title">Novidades</h2>
+            <p class="section-description">Confira os produtos que acabaram de chegar ao Empório SR Lulu.</p>
+          </div>
+          <a href="#" class="all-offers">Ver todas as novidades →</a>
+        </div>
+
+        <div class="new-products-grid">
+          <article class="product new-product">
+            <span class="new-badge">NOVO</span>
+            <div class="product-image">
+              <img src="assets/furadeira650.png" alt="Furadeira de Impacto" loading="lazy">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Furadeira de Impacto Profissional 650W</div>
+              <div class="rating">★★★★★ <span class="reviews">(18)</span></div>
+              <div class="price">R$ 289,90</div>
+              <div class="payment">no Pix ou boleto</div>
+              <button class="add-cart" type="button">🛒&nbsp; Adicionar ao carrinho</button>
+            </div>
+          </article>
+
+          <article class="product new-product">
+            <span class="new-badge">NOVO</span>
+            <div class="product-image">
+              <img src="assets/kitferramentas.png" alt="Kit de Ferramentas" loading="lazy">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Kit de Ferramentas com 100 Peças</div>
+              <div class="rating">★★★★★ <span class="reviews">(32)</span></div>
+              <div class="price">R$ 349,90</div>
+              <div class="payment">no Pix ou boleto</div>
+              <button class="add-cart" type="button">🛒&nbsp; Adicionar ao carrinho</button>
+            </div>
+          </article>
+
+          <article class="product new-product">
+            <span class="new-badge">NOVO</span>
+            <div class="product-image">
+              <img src="assets/torneiraMono.png" alt="Torneira para Cozinha" loading="lazy">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Torneira para Cozinha Monocomando Cromada</div>
+              <div class="rating">★★★★★ <span class="reviews">(14)</span></div>
+              <div class="price">R$ 219,90</div>
+              <div class="payment">no Pix ou boleto</div>
+              <button class="add-cart" type="button">🛒&nbsp; Adicionar ao carrinho</button>
+            </div>
+          </article>
+
+          <article class="product new-product">
+            <span class="new-badge">NOVO</span>
+            <div class="product-image">
+              <img src="assets/lampada.png" alt="Lâmpada LED" loading="lazy">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Lâmpada LED Bulbo 50W Luz Branca</div>
+              <div class="rating">★★★★★ <span class="reviews">(27)</span></div>
+              <div class="price">R$ 17,90</div>
+              <div class="payment">no Pix ou boleto</div>
+              <button class="add-cart" type="button">🛒&nbsp; Adicionar ao carrinho</button>
+            </div>
+          </article>
+
+          <article class="product new-product">
+            <span class="new-badge">NOVO</span>
+            <div class="product-image">
+              <img src="assets/massacorridaSuv.png" alt="Massa Corrida" loading="lazy">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Massa Acrilica Suvinil 25Kg</div>
+              <div class="rating">★★★★★ <span class="reviews">(41)</span></div>
+              <div class="price">R$ 217,80</div>
+              <div class="payment">no Pix ou boleto</div>
+              <button class="add-cart" type="button">🛒&nbsp; Adicionar ao carrinho</button>
+            </div>
+          </article>
+
+          <article class="product new-product">
+            <span class="new-badge">NOVO</span>
+            <div class="product-image">
+              <img src="assets/rejunto.png" alt="Rejunte para pisos" loading="lazy">
+            </div>
+            <div class="product-info">
+              <div class="product-name">Rejunte Flexível para Pisos 5kg</div>
+              <div class="rating">★★★★★ <span class="reviews">(25)</span></div>
+              <div class="price">R$ 29,90</div>
+              <div class="payment">no Pix ou boleto</div>
+              <button class="add-cart" type="button">🛒&nbsp; Adicionar ao carrinho</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Depoimentos -->
+      <section class="testimonials-section" id="depoimentos">
+        <div class="testimonials-header">
+          <h2 class="section-title">O que nossos clientes dizem</h2>
+          <p class="testimonials-subtitle">
+            Quem compra no Empório SR Lulu encontra variedade, bons preços e atendimento de confiança.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <div class="testimonial-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+            <p class="testimonial-text">
+              “Excelente atendimento e muita variedade. Encontrei tudo o que precisava para minha reforma em um só
+              lugar e ainda tive ajuda para escolher os materiais.”
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">JM</div>
+              <div>
+                <strong>João Marcos</strong>
+                <small>Cliente Empório SR Lulu</small>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+            <p class="testimonial-text">
+              “Gostei muito da experiência de compra. Os produtos chegaram direitinho, os preços são competitivos e o
+              atendimento foi rápido e atencioso.”
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">AS</div>
+              <div>
+                <strong>Ana Silva</strong>
+                <small>Cliente Empório SR Lulu</small>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+            <p class="testimonial-text">
+              “Já comprei ferramentas e materiais para várias obras. Sempre encontro produtos de qualidade e consigo
+              tirar minhas dúvidas com a equipe. Recomendo!”
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">RC</div>
+              <div>
+                <strong>Rafael Costa</strong>
+                <small>Cliente Empório SR Lulu</small>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer" id="contato">
+      <div class="footer-container">
+        <div class="footer-box">
+          <p class="footer-brand">EMPÓRIO SR LULU</p>
+          <p>
+            Tudo para sua obra, do básico ao acabamento. Qualidade, variedade e atendimento para ajudar você a
+            construir melhor.
+          </p>
+
+          <div class="social-footer" aria-label="Redes sociais">
+            <a href="#" aria-label="Instagram" title="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                <circle cx="17.4" cy="6.7" r="1"/>
+              </svg>
+            </a>
+
+            <a href="#" aria-label="Facebook" title="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M14 8h3V4.5c-.6-.1-1.8-.2-3.1-.2-3.1 0-5.2 1.9-5.2 5.4V13H5.5v3.9h3.2V22h4v-5.1h3.4l.5-3.9h-3.9V10c0-1.1.3-2 1.3-2z"/>
+              </svg>
+            </a>
+
+            <a href="#" aria-label="WhatsApp" title="WhatsApp">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.2 1.6 6L0 24l6.3-1.7a11.9 11.9 0 0 0 5.7 1.5h.1c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.3-6.2-3.5-8.4zM12.1 21.7c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.7 9.7 0 1 1 8.3 4.6zm5.3-7.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.8-1.6.1-.2.1-.4 0-.6-.1-.2-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.1 1.4 3.3c.2.2 2.4 3.7 5.8 5.2 2.2 1 2.2.7 2.6.7.4 0 1.8-.7 2-1.3.3-.6.3-1.2.2-1.3 0-.2-.2-.2-.5-.4z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-box">
+          <h3>Institucional</h3>
+          <a href="#">Sobre nós</a>
+          <a href="#">Nossas lojas</a>
+          <a href="#">Trabalhe conosco</a>
+          <a href="#">Política de privacidade</a>
+        </div>
+
+        <div class="footer-box">
+          <h3>Atendimento</h3>
+          <p>Segunda a sexta: 8h às 18h</p>
+          <p>Sábado: 8h às 13h</p>
+          <p>Atendimento via WhatsApp</p>
+        </div>
+
+        <div class="footer-box">
+          <h3>Fale conosco</h3>
+          <p>Encontre tudo para sua obra com a gente.</p>
+          <a href="#contato">📱 WhatsApp</a>
+          <a href="mailto:contato@emporiosrlulu.com">✉️ E-mail</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Empório SR Lulu. Todos os direitos reservados.</span>
+        <span>Qualidade para sua obra.</span>
+      </div>
+    </footer>
+  </body>
+</html>

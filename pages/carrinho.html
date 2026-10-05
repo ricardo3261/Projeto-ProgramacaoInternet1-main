@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu carrinho | Empório SR Lulu</title>
+    <link rel="stylesheet" href="../style/style.css">
+  </head>
+
+  <body>
+    <div class="top-bar">
+      <div class="top-left"><div class="top-item"><strong>Frete grátis</strong> para Pernambuco em compras acima de R$ 299,00</div></div>
+      <div class="top-right"><div class="top-item">✓ Compra segura</div><div class="top-item">▭ Parcele em até 12x</div><div class="top-item">◉ Atendimento via WhatsApp</div></div>
+    </div>
+
+    <header>
+      <a class="logo" href="../emporio-sr-lulu-organizado.html" aria-label="Página inicial do Empório SR Lulu">
+        <span class="logo-circle"><img src="../assets/logoLoja.png" alt="Logo Empório SR Lulu"></span>
+        <span class="logo-text"><span class="logo-title">EMPÓRIO<br>SR LULU</span><span class="logo-subtitle">Tudo para sua obra, do básico ao acabamento.</span></span>
+      </a>
+      <form class="search" action="#" role="search">
+        <label class="search-icon" for="search-carrinho">⌕</label>
+        <input id="search-carrinho" type="search" placeholder="O que você precisa para sua obra?">
+        <button type="submit">Buscar</button>
+      </form>
+      <div class="header-actions">
+        <a class="header-action" href="minha-conta.html"><span class="action-icon">♙</span><span class="header-action-text"><strong>Minha conta</strong><small>Entre ou cadastre-se</small></span></a>
+        <a class="header-action" href="favoritos.html"><span class="action-icon">♡</span><span class="header-action-text"><strong>Favoritos</strong></span></a>
+        <a class="header-action cart" href="carrinho.html" aria-current="page"><span class="action-icon">🛒</span><span class="cart-badge">3</span><span class="header-action-text"><strong>Meu carrinho</strong><small>R$ 510,70</small></span></a>
+      </div>
+    </header>
+
+    <nav class="navigation" aria-label="Departamentos">
+      <div class="nav-menu">
+        <a href="../emporio-sr-lulu-organizado.html" class="nav-item">☰ Todos os departamentos</a><span class="nav-separator" aria-hidden="true"></span>
+        <a href="../emporio-sr-lulu-organizado.html#categorias" class="nav-item">▦ Materiais básicos</a>
+        <a href="../emporio-sr-lulu-organizado.html#categorias" class="nav-item">⌕ Ferramentas</a>
+        <a href="eletrica.html" class="nav-item">ϟ Elétrica</a>
+        <a href="../emporio-sr-lulu-organizado.html#categorias" class="nav-item">◉ Hidráulica</a>
+        <a href="../emporio-sr-lulu-organizado.html#categorias" class="nav-item">▣ Pisos e revestimentos</a>
+        <a href="../emporio-sr-lulu-organizado.html#categorias" class="nav-item">▱ Tintas</a>
+        <a href="ofertas.html" class="offers-link"><span class="offer-icon">%</span> Ofertas</a>
+      </div>
+    </nav>
+
+    <main class="page-main">
+      <p class="breadcrumbs"><a href="../emporio-sr-lulu-organizado.html">Início</a> / Meu carrinho</p>
+      <h1 class="page-title">Meu carrinho</h1>
+      <p class="page-subtitle">Confira seus produtos e dê o próximo passo na sua obra.</p>
+
+      <div class="checkout-steps" aria-label="Etapas da compra">
+        <div class="checkout-step is-active"><span class="checkout-step__number">1</span> Carrinho</div>
+        <div class="checkout-step"><span class="checkout-step__number">2</span> Identificação e pagamento</div>
+        <div class="checkout-step"><span class="checkout-step__number">3</span> Confirmação</div>
+      </div>
+
+      <div class="cart-layout">
+        <div>
+          <section class="cart-panel" aria-labelledby="carrinho-produtos">
+            <div class="cart-table-head">
+              <strong id="carrinho-produtos">Produto</strong>
+              <span>Quantidade</span>
+              <span>Subtotal</span>
+            </div>
+
+            <article class="cart-line">
+              <div class="cart-product">
+                <img src="../assets/furadeira.png" alt="Parafusadeira e Furadeira Black+Decker 12V">
+                <div>
+                  <h2>Parafusadeira e Furadeira Black+Decker 12V</h2>
+                  <p>BLACK+DECKER • Em estoque</p>
+                  <p><strong style="color: var(--green-800)">R$ 245,90 / unidade</strong></p>
+                  <button class="remove-item" type="button">🗑 Remover</button>
+                </div>
+              </div>
+              <div class="quantity-control" aria-label="Quantidade de furadeiras">
+                <button type="button" aria-label="Diminuir quantidade">−</button>
+                <span>2</span>
+                <button type="button" aria-label="Aumentar quantidade">+</button>
+              </div>
+              <strong class="cart-subtotal">R$ 491,80</strong>
+            </article>
+
+            <article class="cart-line">
+              <div class="cart-product">
+                <img src="../assets/ferramentas.png" alt="Lixa para madeira grão 120">
+                <div>
+                  <h2>Lixa para madeira grão 120 • kit 10 un.</h2>
+                  <p>NORTON • Em estoque</p>
+                  <p><strong style="color: var(--green-800)">R$ 18,90 / unidade</strong></p>
+                  <button class="remove-item" type="button">🗑 Remover</button>
+                </div>
+              </div>
+              <div class="quantity-control" aria-label="Quantidade de kits de lixa">
+                <button type="button" aria-label="Diminuir quantidade">−</button>
+                <span>1</span>
+                <button type="button" aria-label="Aumentar quantidade">+</button>
+              </div>
+              <strong class="cart-subtotal">R$ 18,90</strong>
+            </article>
+          </section>
+
+          <section class="delivery-panel" aria-labelledby="entrega-title">
+            <h2 id="entrega-title">Entrega ou retirada</h2>
+            <form class="shipping-form" action="#">
+              <label for="cep">CEP de entrega<input id="cep" type="text" inputmode="numeric" value="58038-000"></label>
+              <button class="button-secondary" type="submit">Calcular frete</button>
+              <a class="text-link" href="#">Não sei meu CEP</a>
+            </form>
+
+            <div class="shipping-option is-selected">
+              <label><input type="radio" name="delivery" checked><span>Entrega em João Pessoa, PB<small>Receba em até 3 dias úteis após a aprovação</small></span></label>
+              <strong>R$ 24,90</strong>
+            </div>
+            <div class="shipping-option">
+              <label><input type="radio" name="delivery"><span>Retirar na loja • Recife, PE</span></label>
+              <strong>Grátis</strong>
+            </div>
+          </section>
+
+          <form class="coupon-form" action="#">
+            <label for="coupon">Tem um cupom de desconto?</label>
+            <input id="coupon" type="text" placeholder="Digite seu cupom">
+            <button class="button-secondary" type="submit">Aplicar</button>
+          </form>
+
+          <a class="text-link" href="../emporio-sr-lulu-organizado.html" style="display: inline-block; margin-top: 28px">← Continuar comprando</a>
+        </div>
+
+        <aside class="order-summary" aria-label="Resumo do pedido">
+          <h2>Resumo do pedido</h2>
+          <div class="summary-row"><span>Subtotal (3 unidades)</span><strong>R$ 510,70</strong></div>
+          <div class="summary-row"><span>Frete</span><strong>R$ 24,90</strong></div>
+          <div class="summary-row"><span>Descontos</span><strong>R$ 0,00</strong></div>
+          <div class="summary-total"><span>Total</span><strong>R$ 535,60</strong></div>
+          <p class="summary-installments">ou 2x de R$ 267,80 sem juros</p>
+          <a class="button-primary" href="minha-conta.html">→ Continuar para pagamento</a>
+          <p class="summary-security">✓ Seus dados e sua compra estão protegidos</p>
+        </aside>
+      </div>
+
+      <div class="info-banner cart-note">✓ Produtos reservados após a confirmação do pagamento. Todos os itens acompanham nota fiscal.</div>
+    </main>
+
+    <section class="support-cta" id="contato"><div><h2>Precisando de uma mão na sua obra?</h2><p>Nossa equipe ajuda você a escolher o produto certo.</p></div><a class="button-primary" href="https://wa.me/558133332020">Fale pelo WhatsApp</a></section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-box"><p class="footer-brand">EMPÓRIO SR LULU</p><p>Da fundação ao acabamento, tudo para construir e transformar seu espaço.</p><p>Recife, Pernambuco • Desde 1998</p></div>
+        <div class="footer-box"><h3>Institucional</h3><a href="../emporio-sr-lulu-organizado.html">Sobre o Empório Sr Lulu</a><a href="../emporio-sr-lulu-organizado.html">Nossas lojas</a><a href="../emporio-sr-lulu-organizado.html">Trabalhe conosco</a></div>
+        <div class="footer-box"><h3>Atendimento</h3><p>(81) 3333-2020</p><a href="mailto:contato@emporiosrlulu.com.br">contato@emporiosrlulu.com.br</a><p>Seg. a sex. 8h às 18h</p></div>
+        <div class="footer-box"><h3>Sua compra</h3><a href="minha-conta.html">Minha conta</a><a href="favoritos.html">Favoritos</a><a href="carrinho.html">Entrega e retirada</a></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 Empório Sr Lulu. Todos os direitos reservados.</span><span>VISA &nbsp; Mastercard &nbsp; ELO &nbsp; PIX &nbsp; Boleto</span><span>Compra 100% segura • Seus dados protegidos</span></div>
+    </footer>
+  </body>
+</html>
